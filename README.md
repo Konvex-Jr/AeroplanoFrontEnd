@@ -73,3 +73,48 @@ export default defineConfig([
 ])
 
 ```
+/* 
+ESTRUTURAÇÃO DO PROJETO
+
+src/
+├── assets/
+│   └── images/
+│       ├── hero/          → imagens da seção inicial
+│       ├── projects/      → imagens do carrossel "Como Fazemos"
+│       └── clients/       → logos da seção de clientes
+├── components/
+│   ├── Header.tsx
+│   ├── Hero.tsx
+│   ├── About.tsx
+│   ├── HowWeWork.tsx
+│   ├── Clients.tsx
+│   ├── Footer.tsx
+│   ├── ContactForm.tsx
+│   └── Carousel/
+│       ├── Carousel.tsx
+│       ├── CarouselCard.tsx
+│       └── CarouselDots.tsx
+├── data/
+│   ├── projects.ts        → array com os projetos do carrossel (título, cliente, imagem, descrição)
+│   └── clients.ts         → array com os logos/nomes dos clientes
+├── App.tsx                 (já existe — só vai importar e organizar as seções em ordem)
+├── main.tsx                 (já existe)
+└── index.css                 (já existe — import do Tailwind)
+
+Seção na LP                                                             Componente                O que tem dentro
+
+Logo+manu "hambúrguer"                                                  Header.tsx                Navegação, toggle do menu mobile
+Chamada + imagem de produtos	                                          Hero.tsx	                Título, texto, imagem
+"conhecimento e experiência" / "entendimento do contexto"	              About.tsx	                Os dois blocos de texto
+"Como Fazemos" + carrossel	                                            HowWeWork.tsx             (usa Carousel/)	Texto do processo + carrossel de projetos
+Grade de logos	                                                        Clients.tsx	              Grid dos 16 logos
+Endereço, telefones, redes, formulário	                        Footer.tsx + ContactForm.tsx	    Info de contato + formulário separado (por ter estado
+                                                                                                  próprio dos campos)
+
+Duas observações rápidas:
+
+data/projects.ts e data/clients.ts: em vez de escrever o conteúdo direto no JSX, deixa num array separado com uma interface (ex: interface Project { title: string; client: string; image: string; description: string }). Assim, quando as imagens/textos reais chegarem, você só edita esses arquivos, sem mexer no componente.
+
+Ícones do rodapé/menu (localização, telefone, Instagram, e-mail, hambúrguer): dá pra usar uma lib tipo lucide-react em vez de guardar SVG manualmente — aí nem precisa de pasta de ícones.
+
+*/
