@@ -97,3 +97,11 @@
 - [ ] Copiar API do Professor Marcos
 - [ ] Modificar para os Requisitos da Aeroplano
 - [ ] Testar API
+
+## Tarefas por Semana
+
+*Semana 1.* Página Home
+
+*Semana 2.* Páginas Serviços e Poertfólio
+
+*Semana 3.* Construção da API + Página do Blog + Integração com API
