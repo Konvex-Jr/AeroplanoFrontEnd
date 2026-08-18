@@ -6,10 +6,7 @@ export default function Home() {
         <div className="">
 
             <Nav />
-
             <Header />
-
-            {/* <Carousel /> */}
 
         </div>
     )
