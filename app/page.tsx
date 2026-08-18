@@ -1,11 +1,15 @@
-import Carousel from "./ui/carousel/Carousel";
+import Nav    from "./ui/Nav";
+import Header from "./ui/Header"
 
 export default function Home() {
     return (
         <div className="">
-            <h1>Home</h1>
 
-            <Carousel />
+            <Nav />
+
+            <Header />
+
+            {/* <Carousel /> */}
 
         </div>
     )
