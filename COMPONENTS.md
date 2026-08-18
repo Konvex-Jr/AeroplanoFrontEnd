@@ -14,7 +14,7 @@
         - [ ] Section About           *Guilherme*
         - [ ] Section Flip Carroussel *Guilherme*
         - [ ] Section Customers       *Guilherme*
-        - [ ] Footer Endereços e Forms para Contato *Guilherme*
+        - [ ] Footer Endereços e Forms para Contato *Gabriel*
     
     - Construir Página: Services
         - [ ] Nav (mobile e desktop)
