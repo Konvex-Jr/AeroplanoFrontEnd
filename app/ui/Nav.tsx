@@ -1,9 +1,155 @@
+"use client"
+
 // Mobile  : Sandwich
 // Desktop : Navigation
 
+import {  AnimatePresence, motion, variantProps, Variants } from "motion/react"
+
+import logo_aeroplano from "@/public/logo_aero_2026_branco.webp"
+
+import sandwich_icon from "@/public/icons/sandwich_icon.svg"
+import close_sidebar_icon from "@/public/icons/x-solid-full.svg"
+
+import Link from "next/link"
+import { useState, ViewTransition } from "react"
+import { useWindowWidth } from "@/app/lib/hooks/useWindowWidth"
+
+const MAX_WIDTH = 960
+
+const navigation = [
+    {
+        href: '/',
+        text: 'INICIO'
+    },
+    {
+        href: '/servicos',
+        text: "SERVIÇOS"
+    },
+    {
+        href: '#sobre',
+        text: "SOBRE"
+    },
+    {
+        href: '/projetos',
+        text: "PROJETOS"
+    },
+    {
+        href: '/blog',
+        text: "BLOG"
+    },
+    {
+        href: '#contato',
+        text: "CONTATO"
+    }
+]
+
 export default function Nav(){
-    return (
-        <div className="flex gap-1" >
-        </div>
+    
+    const [ open, setSideBar ] = useState(false)
+
+    const width = useWindowWidth()
+
+    if(width === 0) return
+
+    function openSidebar(){
+        setSideBar(true)
+    }
+
+    function closeSidebar(){
+        setSideBar(false)
+    }
+
+    const sidebarVariants: Variants = {
+        hidden: { 
+            x: '100%' // Fora da Tela
+        },
+        visible: { 
+            x: '0',     // Posição Original (borda direita)
+            transition: { type: 'tween', duration: 0.3, ease: 'easeOut' }
+        },
+        exit: { 
+            x: '100%', // Volta para Fora da Tela
+            transition: { type: 'tween', duration: 0.3, ease: 'easeIn' }
+        }
+    }
+
+    const overlayVariants: Variants = {
+        hidden: { 
+            opacity: 0 // Começa Invisível
+        },
+        visible: { 
+            opacity: 1, // Fica Totalmente Visível (com o bg-black/40)
+            transition: { duration: 0.3 }
+        },
+        exit: { 
+            opacity: 0, // Volta a Ficar Invisível
+            transition: { duration: 0.3 }
+        }
+    };
+
+    return (    
+        <>  
+            {/* Navigation Desktop */}
+            <div className="relative flex justify-between items-center px-8 py-16 z-10" >
+                
+                <img className="h-[6cqw] lg:h-16" src={logo_aeroplano.src} alt="" />
+                
+                {/* Sandwich to Open Sidebar */}
+                { width < MAX_WIDTH && <img className="pr-2 cursor-pointer" src={sandwich_icon.src} alt="" onClick={() => openSidebar() } /> }
+
+                {/* Navigation Desktop */}
+                <div className={`${ width < MAX_WIDTH ? `hidden` : 'flex relative gap-8' }`}>
+                    { navigation.map((elem, index) => {
+                        return <Link key={index} className="text-white text-[1.3cqw] cursor-pointer" href={elem.href} >{elem.text}</Link>
+                    }) }
+                </div>
+            </div>
+
+            <AnimatePresence>
+            { open && (
+                <>
+                    {/* Overlay  */}
+                    <motion.div
+                        className="fixed inset-0 bg-black/40 z-40 backdrop-blur-sm"
+                        key="overlay"
+                        variants={overlayVariants}
+                        initial="hidden"
+                        animate="visible" 
+                        exit="exit"      
+                        onClick={() => closeSidebar() }
+                        aria-hidden="true"                         
+                    />
+
+                    {/* Sidebar */}
+                    <motion.div
+                        className="fixed flex flex-col items-center justify-center gap-8 right-0 top-0 w-48 h-full bg-linear-to-r from-gradient-start to-gradient-end text-white z-50" 
+                        key="sidebar"
+                        variants={sidebarVariants} 
+                        initial="hidden" 
+                        animate="visible"
+                        exit="exit"
+                        role="dialog"
+                        aria-modal="true"
+                        transition={{type: "tween", 
+                        duration: 0.35, ease: "easeOut"}} 
+                    >                
+                        <img className="h-8 absolute cursor-pointer right-12 top-18 z-52" src={close_sidebar_icon.src} alt="" onClick={() => closeSidebar() } />
+                            <div className={`flex flex-col items-center justify-center gap-12 h-full right-0 pr-8  z-50`} >
+                                { navigation.map((elem, index) => {
+                                    return (
+                                        <ViewTransition key={index}>
+                                            <Link className="text-white cursor-pointer hover:scale-120 transition-all duration-75" href={elem.href} >{elem.text}</Link>
+                                        </ViewTransition>
+
+                                    )
+                                }) }
+                            </div>
+                    </motion.div>
+                </>
+            )
+            }
+            </AnimatePresence>
+
+        </>
     )
 }
