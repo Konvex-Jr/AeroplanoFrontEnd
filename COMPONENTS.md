@@ -8,8 +8,9 @@
     - [X] Iniciar Projeto com NextJS
     
     - [ ] Construir Página: Home
-        - [ ] Nav (mobile e desktop) *Gabriel*
-        - [ ] Header                 *Gabriel*
+        - [X] Nav (mobile e desktop) *Gabriel*
+            - [ ] Corrigir Background de Nav (acima do header)
+        - [X] Header                 *Gabriel*
         - [ ] Section Experience      *Guilherme*
         - [ ] Section About           *Guilherme*
         - [ ] Section Flip Carroussel *Guilherme*
