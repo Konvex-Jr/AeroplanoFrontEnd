@@ -6,8 +6,11 @@
 }
 
 @theme {
-  --color-gradient-end  : #B3DDD8;
   --color-gradient-start: #A8C1D9;
+  --color-gradient-end  : #B3DDD8;
+
+  --color-nav-gradient-start: #88a9cb;
+  --color-nav-gradient-end  : #99d1c9;
 }
 
 body {
