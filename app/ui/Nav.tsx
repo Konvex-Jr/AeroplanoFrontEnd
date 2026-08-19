@@ -3,7 +3,7 @@
 // Mobile  : Sandwich
 // Desktop : Navigation
 
-import {  AnimatePresence, motion, variantProps, Variants } from "motion/react"
+import {  AnimatePresence, motion, Variants } from "motion/react"
 
 import logo_aeroplano from "@/public/logo_aero_2026_branco.webp"
 
@@ -13,6 +13,7 @@ import close_sidebar_icon from "@/public/icons/x-solid-full.svg"
 import Link from "next/link"
 import { useState, ViewTransition } from "react"
 import { useWindowWidth } from "@/app/lib/hooks/useWindowWidth"
+import Image from "next/image"
 
 const MAX_WIDTH = 960
 
@@ -92,11 +93,12 @@ export default function Nav(){
             {/* Navigation Desktop */}
             <div className="relative flex justify-between items-center px-8 py-16 z-10" >
                 
-                <img className="h-[6cqw] lg:h-16" src={logo_aeroplano.src} alt="" />
+                {/* <Image className="h-[6cqw] lg:h-16" source={logo_aeroplano.src} alt="" /> */}
+                <Image src={logo_aeroplano.src} alt="Logo Aeroplano" />
                 
                 {/* Sandwich to Open Sidebar */}
-                { width < MAX_WIDTH && <img className="pr-2 cursor-pointer" src={sandwich_icon.src} alt="" onClick={() => openSidebar() } /> }
-
+                { width < MAX_WIDTH && <Image className="pr-2 cursor-pointer" src={sandwich_icon.src} alt="Ícone de Sanduíche" onClick={() => openSidebar() } /> }
+        
                 {/* Navigation Desktop */}
                 <div className={`${ width < MAX_WIDTH ? `hidden` : 'flex relative gap-8' }`}>
                     { navigation.map((elem, index) => {
@@ -133,7 +135,7 @@ export default function Nav(){
                         transition={{type: "tween", 
                         duration: 0.35, ease: "easeOut"}} 
                     >                
-                        <img className="h-8 absolute cursor-pointer right-12 top-18 z-52" src={close_sidebar_icon.src} alt="" onClick={() => closeSidebar() } />
+                        <Image className="h-8 absolute cursor-pointer right-12 top-18 z-52" src={close_sidebar_icon.src} alt="Ícone X" onClick={() => closeSidebar() } />
                             <div className={`flex flex-col items-center justify-center gap-12 h-full right-0 pr-8  z-50`} >
                                 { navigation.map((elem, index) => {
                                     return (
