@@ -26,7 +26,7 @@ const navigation = [
         text: "SERVIÇOS"
     },
     {
-        href: '#sobre',
+        href: '/#sobre',
         text: "SOBRE"
     },
     {
@@ -38,16 +38,18 @@ const navigation = [
         text: "BLOG"
     },
     {
-        href: '#contato',
+        href: '/#contato',
         text: "CONTATO"
     }
 ]
 
 export default function Nav(){
     
-    const [ open, setSideBar ] = useState(false)
+    const [ open, setSideBar ]        = useState(false)
+    const [ isLoading, setIsLoading ] = useState(true)
 
     const width = useWindowWidth()
+
 
     if(width === 0) return
 
@@ -90,18 +92,21 @@ export default function Nav(){
     return (    
         <>  
             {/* Navigation Desktop */}
-            <div className="relative flex justify-between items-center px-8 py-16 z-10" >
-                
-                {/* <Image className="h-[6cqw] lg:h-16" source={logo_aeroplano.src} alt="" /> */}
-                <img className="h-[6cqw] lg:h-16" src={logo_aeroplano.src} alt="Logo Aeroplano" />
+            <div className={`relative flex justify-between items-center px-8 py-16`} >
+
+                {/* Imagem de Fundo */}
+                <div className="absolute inset-0 w-full h-full -z-10 bg-linear-to-r from-nav-gradient-start to-nav-gradient-end" ></div>
+            
+
+                <img className="h-[6cqw] lg:h-16 z-20" src={logo_aeroplano.src} alt="Logo Aeroplano" />
                 
                 {/* Sandwich to Open Sidebar */}
-                { width < MAX_WIDTH && <img className="pr-2 cursor-pointer" src={sandwich_icon.src} alt="Ícone de Sanduíche" onClick={() => openSidebar() } /> }
+                { width < MAX_WIDTH && <img className="pr-2 cursor-pointer z-20" src={sandwich_icon.src} alt="Ícone de Sanduíche" onClick={() => openSidebar() } /> }
         
                 {/* Navigation Desktop */}
-                <div className={`${ width < MAX_WIDTH ? `hidden` : 'flex relative gap-8' }`}>
+                <div className={`${ width < MAX_WIDTH ? `hidden` : 'flex relative gap-8 z-20 md:pr-8' }`}>
                     { navigation.map((elem, index) => {
-                        return <Link key={index} className="text-white text-[1.3cqw] cursor-pointer" href={elem.href} >{elem.text}</Link>
+                        return <Link key={index} className="text-white text-[1.4cqw] cursor-pointer" href={elem.href} >{elem.text}</Link>
                     }) }
                 </div>
             </div>

@@ -1,12 +1,13 @@
-import Nav    from "./ui/Nav";
-import Header from "./ui/Header"
+import Footer from "./ui/Footer";
+import Hero from "./ui/Hero";
 
 export default function Home() {
     return (
         <div className="">
 
-            <Nav />
-            <Header />
+            <Hero />
+
+            <Footer />
 
         </div>
     )

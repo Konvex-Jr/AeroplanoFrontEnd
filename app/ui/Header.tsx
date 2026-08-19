@@ -4,7 +4,7 @@ import fundo_header from "@/public/tela_inicial_fundo_2026_v2.webp"
 export default function Header() {
   return (
 
-    <header className="absolute -top-12 md:-top-32 lg:-top-56 xl:-top-86 w-full @container text-white">
+    <header className="absolute -top-12 md:-top-32 lg:-top-56 z-10 xl:-top-86 w-full @container text-white">
       
       <img 
         className="w-full h-auto block object-cover" 
