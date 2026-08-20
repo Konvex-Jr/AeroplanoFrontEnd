@@ -35,11 +35,23 @@ Acesse em `http://localhost:3000`
 
 ```
 app/
+│
+├── api
+│   └── submit.ts                  # Handler para o Forms ( Resend API )
+│
 ├── ui/                            # Componentes da Aplicação
-│   ├── Nav.tsx
-│   └── carousel/
+│   │                         
+│   ├── Footer.tsx                 # Componente Footer
+│   ├── Form.tsx                   # Formulário para envio de Email
+│   ├── Header.tsx                 # Componente Header
+│   ├── Nav.tsx                    # Componente Navegação
+│   └── carousel/                  # Componente Carrossel
 │   
 ├── lib/                           # Funções e arquivos auxiliares 
+│   │    
+│   ├── hooks/
+│   │   └── useWindowWidth.ts      # Retorna a LARGURA do dispositivo usado
+│   │
 │   └── projects.ts                # Array de projetos para desenvolvimento
 │
 ├── fonts/                          # Arquivos das fontes utilizadas
@@ -63,7 +75,19 @@ app/
 ```
 
 ```
-public/                             # Imagens e ícones
+public/                             # Imagens e Ícones
+├── icons/
+│   ├── email_icon.svg
+│   ├── instagram_icon.svg
+│   ├── map_icon.svg
+│   ├── phone_icon.svg
+│   ├── sandwich_icon.svg
+│   └── x-solid-full.svg
+│
+├── logo_aero_2026_branco.webp
+├── sidebar_background.webp
+├── tela_inicial_fundo_2026_v2_recortada.webp
+└── tela_inicial_fundo_2026_v2.webp
 ```
 
 ## 🌿 Branches — como trabalhar
