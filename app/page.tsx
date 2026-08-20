@@ -11,7 +11,7 @@ export default function Home() {
             <Header />
 
             {/* Footer Section */}
-            <Footer className="relative bottom-0 w-full flex flex-col md:flex-row justify-center gap-12 px-12 py-10" />
+            <Footer className="relative bottom-0 w-full flex items-start justify-center px-8 gap-3 lg:gap-32 py-10" />
 
         </div>
     )
