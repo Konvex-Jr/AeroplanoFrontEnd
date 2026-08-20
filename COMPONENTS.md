@@ -8,15 +8,18 @@
     - [X] Iniciar Projeto com NextJS
     
     - [ ] Construir Página: Home
-        - [X] Nav (mobile e desktop) *Gabriel*
-            - [ ] Corrigir Background de Nav (acima do header)
-        - [X] Header                 *Gabriel*
+        - [X] Nav (mobile e desktop)  *Gabriel*
+            - [X] Corrigir Background de Nav (acima do header)      *Gabriel*
+            - [ ] Implementar Navegação para Home (sobre e contato) *Gabriel*
+        - [X] Header                  *Gabriel*
         - [ ] Section Experience      *Guilherme*
         - [ ] Section About           *Guilherme*
         - [ ] Section Flip Carroussel *Guilherme*
         - [ ] Section Customers       *Guilherme*
-        - [ ] Footer Endereços e Forms para Contato *Gabriel*
-    
+        - [ ] Section Founders
+        - [X] Footer Endereços e Forms para Contato *Gabriel*
+            - [ ] Criar Integração com ResendAPI    *Gabriel*
+
     - Construir Página: Services
         - [ ] Nav (mobile e desktop)
         - [ ] Sections (design de produto, design gráfico e consultoria)

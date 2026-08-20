@@ -10,7 +10,9 @@
   --color-gradient-end  : #B3DDD8;
 
   --color-nav-gradient-start: #88a9cb;
-  --color-nav-gradient-end  : #99d1c9;
+  --color-nav-gradient-end  : #aad0c8;
+
+  --color-background-footer: #244654;
 }
 
 body {
