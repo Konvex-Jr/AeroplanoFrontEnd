@@ -45,8 +45,7 @@ const navigation = [
 
 export default function Nav(){
     
-    const [ open, setSideBar ]        = useState(false)
-    const [ isLoading, setIsLoading ] = useState(true)
+    const [ open, setSideBar ] = useState(false)
 
     const width = useWindowWidth()
 
@@ -92,13 +91,13 @@ export default function Nav(){
     return (    
         <>  
             {/* Navigation Desktop */}
-            <div className={`relative flex justify-between items-center px-8 py-16`} >
+            <div className={`relative w-full top-0 left-0 flex justify-between items-center px-8 py-10 lg:py-16`} >
 
                 {/* Imagem de Fundo */}
                 <div className="absolute inset-0 w-full h-full -z-10 bg-linear-to-r from-nav-gradient-start to-nav-gradient-end" ></div>
             
 
-                <img className="h-[6cqw] lg:h-16 z-20" src={logo_aeroplano.src} alt="Logo Aeroplano" />
+                <img className="h-[6cqw] lg:h-16 z-20 pl-1 lg:pl-7 lg" src={logo_aeroplano.src} alt="Logo Aeroplano" />
                 
                 {/* Sandwich to Open Sidebar */}
                 { width < MAX_WIDTH && <img className="pr-2 cursor-pointer z-20" src={sandwich_icon.src} alt="Ícone de Sanduíche" onClick={() => openSidebar() } /> }
