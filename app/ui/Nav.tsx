@@ -18,20 +18,16 @@ const MAX_WIDTH = 960
 
 const navigation = [
     {
-        href: '/',
-        text: 'INICIO'
-    },
-    {
         href: '/servicos',
         text: "SERVIÇOS"
     },
     {
-        href: '/#sobre',
-        text: "SOBRE"
-    },
-    {
         href: '/projetos',
         text: "PROJETOS"
+    },
+    {
+        href: '/#sobre',
+        text: "SOBRE"
     },
     {
         href: '/blog',
