@@ -7,38 +7,39 @@ import Nav from "./ui/Nav";
 export default function Home() {
     return (
         <main>
+
             <Nav />
             <Header />
 
-            {/* <div aria-hidden="true" className="h-6 bg-white" /> */}
+            {/* Sobre */}
+            <section className="destaque">
+                <div className="mx-auto grid max-w-6xl grid-cols-1 gap-x-60 gap-y-10 text-center md:grid-cols-2 md:gap-y-8 md:text-left">
+                    <article className="flex flex-col items-center md:items-start">
+                        <h2>
+                            <strong className="font-medium">conhecimento</strong> e{" "}
+                            <strong className="font-medium">experiência</strong>
+                            <br />
+                            em materiais e processos
+                        </h2>
 
-<section className="destaque">
-    <div className="mx-auto grid max-w-6xl grid-cols-1 gap-x-60 gap-y-10 text-center md:grid-cols-2 md:gap-y-8 md:text-left">
-        <article className="flex flex-col items-center md:items-start">
-            <h2>
-                <strong className="font-medium">conhecimento</strong> e{" "}
-                <strong className="font-medium">experiência</strong>
-                <br />
-                em materiais e processos
-            </h2>
+                        <p className="mt-4 max-w-sm text-slate-600 md:mt-14">
+                            entendemos como criar soluções adequadas convertendo a intenção de um projeto de design para a realidade da fabricação
+                        </p>
+                    </article>
 
-            <p className="mt-4 max-w-sm text-slate-600 md:mt-14">
-                entendemos como criar soluções adequadas convertendo a intenção de um projeto de design para a realidade da fabricação
-            </p>
-        </article>
+                    <article className="flex flex-col items-center md:items-start">
+                        <h2>
+                            entendimento do <strong className="font-medium">contexto</strong>
+                        </h2>
 
-        <article className="flex flex-col items-center md:items-start">
-            <h2>
-                entendimento do <strong className="font-medium">contexto</strong>
-            </h2>
+                        <p className="mt-4 max-w-sm text-slate-600 md:mt-12">
+                            sabemos como incluir fatores subjetivos como comportamento de uso, tendências e valores culturais na identidade do produto
+                        </p>
+                    </article>
+                </div>
+            </section>
 
-            <p className="mt-4 max-w-sm text-slate-600 md:mt-12">
-                sabemos como incluir fatores subjetivos como comportamento de uso, tendências e valores culturais na identidade do produto
-            </p>
-        </article>
-    </div>
-</section>
-
+            {/* Como fazemos */}
             <section className="como-fazemos-faixa" aria-labelledby="como-fazemos-titulo">
                 <div className="como-fazemos mx-auto">
                     <h2 id="como-fazemos-titulo" className="font-bold text-3xl uppercase  md:text-4xl">
@@ -65,7 +66,10 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* Carrossel */}
             <Carousel />
+
+            {/* Clientes */}
             <section className="w-full">
                 <img
                     src="/Clientes.png"
@@ -73,8 +77,11 @@ export default function Home() {
                     className="w-full h-auto block"
                 />
             </section>
+
+            {/* Equipe */}
             <Equipe/>
 
+            {/* Footer */}
             <Footer className="relative bottom-0 w-full flex items-start justify-center px-8 gap-3 lg:gap-32 py-10" />
         </main>
     )
