@@ -10,31 +10,43 @@
     - [ ] Construir Página: Home
         - [X] Nav (mobile e desktop)  *Gabriel*
             - [X] Corrigir Background de Nav (acima do header)      *Gabriel*
-            - [ ] Implementar Navegação para Home (sobre e contato) *Gabriel*
+            - [ ] Inserir Ícone do WhatsApp (REDONDO)               *Gabriel*
+            - [ ] Implementar Navegação para Home (SOBRE e CONTATO) *Gabriel*
         - [X] Header                  *Gabriel*
-        - [ ] Section Experience      *Guilherme*
-        - [ ] Section About           *Guilherme*
-        - [ ] Section Flip Carroussel *Guilherme*
-        - [ ] Section Customers       *Guilherme*
-        - [ ] Section Founders
-        - [X] Footer Endereços e Forms para Contato *Gabriel*
-            - [ ] Criar Integração com ResendAPI    *Gabriel*
+        - [ ] Adicionar Faixa Branca  *Gabriel*
+        - [X] Section Experience             *Guilherme*
+            - [ ] Corrigir Alinhamentos      *Guilherme*
+            - [ ] Corrigir Tamanho de Fonte  *Guilherme*
+        - [X] Section About           *Guilherme*
+        - [X] Section Flip Carroussel *Guilherme*
+            - [ ] Corrigir Imagens              *Guilherme*
+            - [ ] Corrigir Animação             *Guilherme*
+            - [ ] Corrigir Navegação por Clique *Guilherme*
+            - [ ] Corrigir p/ Mobile            *Guilherme*
+        - [X] Section Customers       *Guilherme*
+        - [X] Section Founders        *Guilherme*
+            - [ ] Corrigir Cores da Fonte e Ícones 
+                    > Ícones: *#325A76*
+                    > Fonte : *#52758B*
+        - [X] Footer Endereços e Forms para Contato                 *Gabriel*
+            - [ ] Remover Telefones e Adicionar Ícones do Whatsapp  *Gabriel*
+            - [ ] Criar Integração com ResendAPI                    *Gabriel*
 
     - Construir Página: Services
-        - [ ] Nav (mobile e desktop)
-        - [ ] Sections (design de produto, design gráfico e consultoria)
-        - [ ] Footer Endereços e Forms para Contato
+        - [X] Nav (mobile e desktop)
+        - [ ] Sections (design de produto, design gráfico e consultoria) *Gabriel*
+        - [X] Footer Endereços e Forms para Contato
     
     - Construir Página: Portfolio
-        - [ ] Nav (mobile e desktop) 
+        - [X] Nav (mobile e desktop)
         - [ ] Section Portfolio (mobile e desktop) 
-        - [ ] Footer Endereços e Forms para Contato 
+        - [X] Footer Endereços e Forms para Contato 
 
     - Construir Página: Blog
-        - [ ] Nav (mobile e desktop)
+        - [X] Nav (mobile e desktop)
         - [ ] Post Card Component
         - [ ] Section Posts (integrar com a API)
-        - [ ] Footer Endereços e Forms para Contato
+        - [X] Footer Endereços e Forms para Contato
 
 - [ ] Construir API do Blog
 - [ ] Integrar Blog com a API
