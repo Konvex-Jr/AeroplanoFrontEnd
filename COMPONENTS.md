@@ -11,6 +11,7 @@
         - [X] Nav (mobile e desktop)  *Gabriel*
             - [X] Corrigir Background de Nav (acima do header)      *Gabriel*
             - [ ] Inserir Ícone do WhatsApp (REDONDO)               *Gabriel*
+            - [ ] Inserir Hover de Cores nos Links                  *Gabriel*
             - [ ] Implementar Navegação para Home (SOBRE e CONTATO) *Gabriel*
         - [X] Header                  *Gabriel*
         - [ ] Adicionar Faixa Branca  *Gabriel*
