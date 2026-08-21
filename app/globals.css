@@ -7,12 +7,14 @@
 
 @theme {
   --color-gradient-start: #A8C1D9;
-  --color-gradient-end: #B3DDD8;
+  --color-gradient-end:   #B3DDD8;
 
   --color-nav-gradient-start: #88a9cb;
   --color-nav-gradient-end  : #aad0c8;
 
   --color-background-footer: #244654;
+  --color-link-hover:        #52758B;
+  --color-text-founders:       #52758B;
 }
 
 body {
@@ -29,7 +31,7 @@ html, body {
   display: flex;
   align-items: center;
   min-height: clamp(480px, 45vw, 520px);
-  padding: clamp(48px, 5vw, 88px) clamp(32px, 7vw, 112px);
+  padding: clamp(48px, 5vw, 88px)
 }
 
 .destaque > div {
@@ -37,7 +39,7 @@ html, body {
 }
 
 .destaque h2 {
-  font-size: clamp(1.5rem, 2.2vw, 2.25rem);
+  /* font-size: clamp(1.5rem, 2.2vw, 2.25rem); */
   line-height: 1.3;
 }
 
@@ -48,14 +50,14 @@ html, body {
 }
 
 .destaque p {
-  font-size: clamp(1.1rem, 1.4vw, 1.375rem);
+  /* font-size: clamp(1.1rem, 1.4vw, 1.375rem); */
   line-height: 1.5;
 }
 
-.como-fazemos-faixa {
+/* .como-fazemos-faixa {
   background-color: #DEEBF6;
   padding: clamp(48px, 5vw, 80px) 0 clamp(88px, 8vw, 128px);
-}
+} */
 
 .como-fazemos {
   background-color: #F6FAFE;
@@ -64,13 +66,12 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: clamp(48px, 5vw, 88px) clamp(32px, 7vw, 600px);
+  padding: clamp(48px, 5vw, 88px)
 }
 
 .como-fazemos > * {
   width: 100%;
   max-width: none;
-  margin-left: 150px;
 }
 
 .como-fazemos h2 {
@@ -88,12 +89,12 @@ html, body {
 @media (max-width: 640px) {
   .destaque {
     min-height: 0;
-    padding: 48px 32px;
+    /* padding: 48px 32px; */
   }
 
   .como-fazemos {
     min-height: 0;
-    padding: 48px 32px;
+    /* padding: 48px 32px; */
   }
 
   .como-fazemos > * {
@@ -102,6 +103,6 @@ html, body {
 
   .carrossel-faixa {
     background-color: #DEEBF6;
-    padding: clamp(40px, 5vw, 64px) 0;
+    /* padding: clamp(40px, 5vw, 64px) 0; */
   }
 }

@@ -37,7 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/"> ) {
   return (
     <html
       lang="pt-br"
-      className={`h-full antialiased`}
+      className={`h-full antialiased scroll-smooth`}
     >
       <body className={`${NeoSansPro.className} min-h-full flex flex-col`}>{children}</body>
     </html>

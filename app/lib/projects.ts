@@ -13,28 +13,32 @@ export const projects: Project[] = [
     image: "/projetos/Carr_Actigrafo_imagem.png",
     backImage: "/projetos/Carr_Actigrafo_texto.png",
     imagePosition: "center",
-    imagemZoom: 1
+    imagemZoom: 1,
+    fit: "contain"
   },
   {
     id: 2,
     image: "/projetos/Carr_Cervejeira_imagem.png",
     backImage: "/projetos/Carr_Cervejeira_texto.png",
     imagePosition: "center",
-    imagemZoom: 1
+    imagemZoom: 1,
+    fit: "contain"
   },
   {
     id: 3,
     image: "/projetos/Carr_Fluire_imagem.png",
     backImage:"/projetos/Carr_Fluire_texto.png",
     imagePosition: "center",
-    imagemZoom: 1
+    imagemZoom: 1,
+    fit: "contain"
   },
   {
     id: 4,
     image: "/projetos/Carr_Lavadora_imagem.png",
-    backImage:"/projetos/carr_Lavadora_texto.png",
+    backImage:"/projetos/Carr_Lavadora_texto.png",
     imagePosition: "center",
-    imagemZoom: 1
+    imagemZoom: 1,
+    fit: "contain"
   },
   {
     id: 5,
@@ -42,6 +46,6 @@ export const projects: Project[] = [
     backImage: "/projetos/Carr_Tesoura_textoEdit.png",
     imagePosition: "center",
     imagemZoom: 1,
-    fit: "cover"
+    fit: "contain"
   },
 ];

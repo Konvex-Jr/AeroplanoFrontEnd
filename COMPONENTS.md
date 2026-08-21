@@ -10,14 +10,14 @@
     - [ ] Construir Página: Home
         - [X] Nav (mobile e desktop)  *Gabriel*
             - [X] Corrigir Background de Nav (acima do header)      *Gabriel*
-            - [ ] Inserir Ícone do WhatsApp (REDONDO)               *Gabriel*
-            - [ ] Inserir Hover de Cores nos Links                  *Gabriel*
-            - [ ] Implementar Navegação para Home (SOBRE e CONTATO) *Gabriel*
+            - [X] Inserir Ícone do WhatsApp (REDONDO)               *Gabriel*
+            - [X] Inserir Hover de Cores nos Links                  *Gabriel*
+            - [X] Implementar Navegação para Home (SOBRE e CONTATO) *Gabriel*
         - [X] Header                  *Gabriel*
-        - [ ] Adicionar Faixa Branca  *Gabriel*
+        - [X] Adicionar Faixa Branca  *Gabriel*
         - [X] Section Experience             *Guilherme*
-            - [ ] Corrigir Alinhamentos      *Guilherme*
-            - [ ] Corrigir Tamanho de Fonte  *Guilherme*
+            - [X] Corrigir Alinhamentos      *Gabriel*
+            - [X] Corrigir Tamanho de Fonte  *Gabriel*
         - [X] Section About           *Guilherme*
         - [X] Section Flip Carroussel *Guilherme*
             - [ ] Corrigir Imagens              *Guilherme*
@@ -26,24 +26,24 @@
             - [ ] Corrigir p/ Mobile            *Guilherme*
         - [X] Section Customers       *Guilherme*
         - [X] Section Founders        *Guilherme*
-            - [ ] Corrigir Cores da Fonte e Ícones 
+            - [X] Corrigir Cores da Fonte e Ícones 
                     > Ícones: *#325A76*
                     > Fonte : *#52758B*
         - [X] Footer Endereços e Forms para Contato                 *Gabriel*
-            - [ ] Remover Telefones e Adicionar Ícones do Whatsapp  *Gabriel*
+            - [X] Remover Telefones e Adicionar Ícones do Whatsapp  *Gabriel*
             - [ ] Criar Integração com ResendAPI                    *Gabriel*
 
-    - Construir Página: Services
+    - Construir Página: Services        *Nav Absolute → Colocar Margem Top*
         - [X] Nav (mobile e desktop)
         - [ ] Sections (design de produto, design gráfico e consultoria) *Gabriel*
         - [X] Footer Endereços e Forms para Contato
     
-    - Construir Página: Portfolio
+    - Construir Página: Portfolio       *Nav Absolute → Colocar Margem Top*
         - [X] Nav (mobile e desktop)
         - [ ] Section Portfolio (mobile e desktop) 
         - [X] Footer Endereços e Forms para Contato 
 
-    - Construir Página: Blog
+    - Construir Página: Blog            *Nav Absolute → Colocar Margem Top*
         - [X] Nav (mobile e desktop)
         - [ ] Post Card Component
         - [ ] Section Posts (integrar com a API)

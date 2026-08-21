@@ -11,7 +11,7 @@ import sandwich_icon from "@/public/icons/sandwich_icon.svg"
 import close_sidebar_icon from "@/public/icons/x-solid-full.svg"
 
 import Link from "next/link"
-import { useState, ViewTransition } from "react"
+import { useState } from "react"
 import { useWindowWidth } from "@/app/lib/hooks/useWindowWidth"
 
 const MAX_WIDTH = 960
@@ -91,7 +91,7 @@ export default function Nav(){
     return (    
         <>  
             {/* Navigation Desktop */}
-            <div className={`relative w-full top-0 left-0 flex justify-between items-center px-8 py-10 lg:py-16`} >
+            <div className={`absolute w-full top-0 left-0 flex justify-between items-center px-8 py-10 lg:py-16`} >
 
                 {/* Imagem de Fundo */}
                 <div className="absolute inset-0 w-full h-full -z-10 bg-linear-to-r from-nav-gradient-start to-nav-gradient-end" ></div>
@@ -105,7 +105,7 @@ export default function Nav(){
                 {/* Navigation Desktop */}
                 <div className={`${ width < MAX_WIDTH ? `hidden` : 'flex relative gap-8 z-20 md:pr-8' }`}>
                     { navigation.map((elem, index) => {
-                        return <Link key={index} className="text-white text-[1.4cqw] cursor-pointer" href={elem.href} >{elem.text}</Link>
+                        return <Link key={index} className="text-white text-[1.4cqw] cursor-pointer hover:text-link-hover transition duration-200" href={elem.href} >{elem.text}</Link>
                     }) }
                 </div>
             </div>
@@ -142,10 +142,7 @@ export default function Nav(){
                             <div className={`flex flex-col items-center justify-center gap-12 h-full right-0 pr-8  z-50`} >
                                 { navigation.map((elem, index) => {
                                     return (
-                                        <ViewTransition key={index}>
-                                            <Link className="text-white cursor-pointer hover:scale-120 transition-all duration-75" href={elem.href} onClick={() => closeSidebar() } >{elem.text}</Link>
-                                        </ViewTransition>
-
+                                            <Link key={index} className="text-white cursor-pointer hover:scale-120 transition-all duration-75" href={elem.href} onClick={() => closeSidebar() } >{elem.text}</Link>
                                     )
                                 }) }
                             </div>

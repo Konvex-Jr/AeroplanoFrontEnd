@@ -31,8 +31,8 @@ function MailIcon({ className }: { className?: string }) {
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
-    <div className="flex items-center gap-4 sm:gap-5">
-      <div className="h-40 w-40 shrink-0 overflow-hidden rounded-full bg-slate-200 sm:h-56 sm:w-56 md:h-64 md:w-64">
+    <div className="flex items-center lg:justify-center w-full lg:w-[40%] gap-4 sm:gap-5">
+      <div className="h-30 w-30 shrink-0 overflow-hidden rounded-full bg-slate-200 sm:h-56 sm:w-56 md:h-64 md:w-64">
         {member.photo ? (
           <img
             src={member.photo}
@@ -47,25 +47,25 @@ function TeamCard({ member }: { member: TeamMember }) {
       </div>
 
       <div className="flex flex-col gap-2">
-        <h3 className="text-base font-bold uppercase tracking-wide text-slate-800 sm:text-lg">
+        <h3 className="font-bold uppercase tracking-wide text-slate-800 sm:text-lg">
           {member.name}
         </h3>
-        <p className="text-sm text-slate-600">{member.role}</p>
-        <p className="text-sm text-slate-600">{member.specialty}</p>
+        <p className="text-xs md:text-lg text-slate-600">{member.role}</p>
+        <p className="text-xs md:text-lg text-slate-600">{member.specialty}</p>
 
         <div className="mt-1.5 flex flex-col gap-1">
           <a
             href={`tel:${member.phone.replace(/\D/g, "")}`}
-            className="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-800"
+            className="flex items-center gap-2 text-xs md:text-lg text-slate-600 hover:text-slate-800"
           >
-            <PhoneIcon className="h-4 w-4 shrink-0 text-sky-500" />
+            <PhoneIcon className="h-4 w-4 shrink-0 text-text-founders" />
             {member.phone}
           </a>
           <a
             href={`mailto:${member.email}`}
-            className="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-800"
+            className="flex items-center gap-2 text-xs md:text-lg text-slate-600 hover:text-slate-800"
           >
-            <MailIcon className="h-4 w-4 shrink-0 text-sky-500" />
+            <MailIcon className="h-4 w-4 shrink-0 text-text-founders" />
             {member.email}
           </a>
         </div>
@@ -79,7 +79,7 @@ const team: TeamMember[] = [
     name: "Rodolfo Floeter Jr.",
     role: "Design de Produto",
     specialty: "Especialização em Publicidade e Propaganda",
-    phone: "(47) 99962-6217",
+    phone: "(47) 99108-5092",
     email: "rodolfo@aeroplanodesign.com.br",
     photo: "/rodolfo.png",
   },
@@ -95,8 +95,8 @@ const team: TeamMember[] = [
 
 export default function Equipe() {
   return (
-    <section className="hidden w-full bg-white px-4 py-14 lg:block lg:py-20">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 sm:flex-row sm:items-center sm:justify-center sm:gap-20">
+    <section className="w-full bg-white px-4 py-14 lg:block lg:py-20">
+      <div className="flex justify-center w-full flex-col text-text-founders items-center gap-10 xl:flex-row sm:items-center sm:justify-center sm:gap-20">
         {team.map((member) => (
           <TeamCard key={member.email} member={member} />
         ))}
