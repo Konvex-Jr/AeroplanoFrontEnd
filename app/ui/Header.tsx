@@ -1,16 +1,24 @@
 
 import fundo_header from "@/public/tela_inicial_fundo_2026_v2_recortada.webp"
+import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Header() {
   return (
 
-    <header className="relative -top-20 md:-top-32 lg:-top-48 z-10 w-full @container text-white">
+    <header className="relative z-10 w-full @container text-white">
       
       <img 
         className="w-full h-full object-cover object-top block" 
         src={fundo_header.src} 
         alt="Imagem da Tela Inicial" 
       />
+
+      <Link href={`https://wa.me/5547999626217`} >
+        <div className="absolute right-[4cqw] bottom-[4cqw] w-[6cqw] lg:w-[4cqw] h-[6cqw] lg:h-[4cqw] flex items-center justify-center bg-green-600 hover:bg-green-700 rounded-[50%]" >
+          <FaWhatsapp className="relative w-[65%] h-[65%]" />
+        </div>
+      </Link>
 
       <div className="absolute top-[30%] left-[18%] w-[80%] xl:top-[25%] flex flex-col gap-[2cqw]">
         

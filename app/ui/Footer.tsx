@@ -3,19 +3,21 @@
 import Image from "next/image"
 
 import map_icon       from "@/public/icons/map_icon.svg"
-import phone_icon     from "@/public/icons/phone_icon.svg"
 import instagram_icon from "@/public/icons/instagram_icon.svg"
 import email_icon     from "@/public/icons/email_icon.svg"
 
 
 import { useWindowWidth } from "../lib/hooks/useWindowWidth"
 import Form from "./Form"
+import Link from "next/link"
+import { FaWhatsapp } from "react-icons/fa"
 
 interface FooterProps {
-    className: string
+    className: string,
+    id: string
 }
 
-export default function Footer({ className }: FooterProps){
+export default function Footer({ className, id }: FooterProps){
     
     const width = useWindowWidth()
 
@@ -24,7 +26,7 @@ export default function Footer({ className }: FooterProps){
     const iconSize = width < 800 ? 20 : 30
     
     return (
-        <div className={`${className} bg-background-footer text-white font-bold`}>
+        <div id={id} className={`${className} bg-background-footer text-white`}>
             
             {/* Contacts */}
             <div className="flex flex-col gap-6 text-center w-full py-8 md:ml-20 lg:ml-32" >
@@ -35,7 +37,7 @@ export default function Footer({ className }: FooterProps){
                         <p>Joinville SC Brasil</p>
                     </div>
                 </div>
-                <div className="flex gap-4" >
+                {/* <div className="flex gap-4" >
                     <Image src={phone_icon.src} width={0} height={0} style={{ width: iconSize, height: iconSize }} alt="Ícone de Telefone" />
                     <div className="text-start text-[2cqw] md:text-lg" >
                         <p>(47) 99962-6217</p>
@@ -46,6 +48,12 @@ export default function Footer({ className }: FooterProps){
                     <div className="text-start text-[2cqw] md:text-lg" >
                         <p>(47) 99108-5092</p>
                     </div>
+                </div> */}
+                <div className="flex gap-4" >
+                    <Image src={email_icon.src} width={0} height={0} style={{ width: iconSize, height: iconSize }} alt="Ícone de Email" />
+                    <div className="text-start text-[2cqw] md:text-lg" >
+                        <p>Contato@aeroplano.com.br</p>
+                    </div>
                 </div>
                 <div className="flex gap-4" >
                     <Image src={instagram_icon.src} width={0} height={0} style={{ width: iconSize, height: iconSize }} alt="Ícone do Instagram" />
@@ -53,16 +61,20 @@ export default function Footer({ className }: FooterProps){
                         <p>aeroplano_design</p>
                     </div>
                 </div>
-                <div className="flex gap-4" >
-                    <Image src={email_icon.src} width={0} height={0} style={{ width: iconSize, height: iconSize }} alt="Ícone de Email" />
-                    <div className="text-start text-[2cqw] md:text-lg" >
-                        <p>Contato@aeroplano.com.br</p>
+                <div className="flex flex-col items-start gap-4" >
+                    <div className="flex flex-col justify-center gap-2 text-[2cqw] md:text-lg">
+                        <p>Agende uma conversa</p>
+                        <Link className="flex justify-center" href={`https://wa.me/5547999626217`} >
+                            <div className=" w-[8cqw] h-[6cqw] lg:w-[5cqw] lg:h-[3cqw] flex items-center justify-center bg-green-600 hover:bg-green-700 rounded-4xl" >
+                                <FaWhatsapp className="relative w-[65%] h-[65%]" />
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>
 
             {/* Forms */}
-            <div className="w-full p-4" >
+            <div className="w-full p-4 font-bold" >
                 <Form />                
             </div>
         </div>

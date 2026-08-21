@@ -14,7 +14,7 @@ export default function CarouselCard({ project, isFlipped, onToggle }: CarouselC
         onClick={onToggle}
         aria-pressed={isFlipped}
         aria-label={isFlipped ? "Fechar detalhes do projeto" : "Ver detalhes do projeto"}
-        className="relative block aspect-[16/10] w-full cursor-pointer appearance-none border-0 bg-transparent p-0 text-left transition-transform duration-500 sm:aspect-auto sm:h-80 md:h-96"
+        className="relative block aspect-16/10 w-full cursor-pointer appearance-none border-0 bg-transparent p-0 text-left transition-transform duration-500 sm:aspect-auto sm:h-80 md:h-96"
         style={{
           transformStyle: "preserve-3d",
           transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
