@@ -1,11 +1,14 @@
-import Hero from "./ui/Hero";
 import Carousel from "./ui/carousel/Carousel";
 import Equipe from "./ui/equipe/TeamCard";
+import Footer from "./ui/Footer";
+import Header from "./ui/Header";
+import Nav from "./ui/Nav";
 
 export default function Home() {
     return (
         <main>
-            <Hero />
+            <Nav />
+            <Header />
 
             {/* <div aria-hidden="true" className="h-6 bg-white" /> */}
 
@@ -71,6 +74,8 @@ export default function Home() {
                 />
             </section>
             <Equipe/>
+
+            <Footer className="relative bottom-0 w-full flex items-start justify-center px-8 gap-3 lg:gap-32 py-10" />
         </main>
     )
 }
