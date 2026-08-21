@@ -14,7 +14,7 @@ export const projects: Project[] = [
     backImage: "/projetos/Carr_Actigrafo_texto.png",
     imagePosition: "center",
     imagemZoom: 1,
-    fit: "contain"
+    fit: "cover",
   },
   {
     id: 2,
@@ -22,30 +22,30 @@ export const projects: Project[] = [
     backImage: "/projetos/Carr_Cervejeira_texto.png",
     imagePosition: "center",
     imagemZoom: 1,
-    fit: "contain"
+    fit: "cover",
   },
   {
     id: 3,
     image: "/projetos/Carr_Fluire_imagem.png",
-    backImage:"/projetos/Carr_Fluire_texto.png",
+    backImage: "/projetos/Carr_Fluire_texto.png",
     imagePosition: "center",
     imagemZoom: 1,
-    fit: "contain"
+    fit: "cover",
   },
   {
     id: 4,
     image: "/projetos/Carr_Lavadora_imagem.png",
-    backImage:"/projetos/Carr_Lavadora_texto.png",
+    backImage: "/projetos/Carr_Lavadora_texto.png",
     imagePosition: "center",
     imagemZoom: 1,
-    fit: "contain"
+    fit: "cover",
   },
   {
     id: 5,
     image: "/projetos/Carr_Tesoura_imagem.png",
-    backImage: "/projetos/Carr_Tesoura_textoEdit.png",
+    backImage: "/projetos/Carr_Tesoura_texto.png",
     imagePosition: "center",
     imagemZoom: 1,
-    fit: "contain"
+    fit: "cover",
   },
 ];

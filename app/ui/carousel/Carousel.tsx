@@ -50,16 +50,16 @@ export default function Carousel() {
           className="carousel-track flex py-9"
           style={{ overflowX: "scroll", scrollbarWidth: "none" } as React.CSSProperties}
         >
-          {/* Espaçador inicial (Peek de 7.5% no mobile e 20% no desktop) */}
-          <div className="w-[7.5%] md:w-[20%] shrink-0" />
+          {/* Espaçador inicial — acompanha a largura do card em cada breakpoint pra permitir centralizar as pontas */}
+          <div className="w-[20%] md:w-[27.5%] shrink-0" />
 
           {projects.map((project, index) => {
             const isActive = index === currentIndex;
             return (
               <div
                 key={project.id ?? index}
-                /* Card com 85% de largura no mobile e 60% a partir de telas md */
-                className="w-[85%] md:w-[60%] shrink-0"
+                /* Card com 60% de largura no mobile e 45% a partir de telas md */
+                className="w-[60%] md:w-[45%] shrink-0"
               >
                 <div
                   style={{
@@ -81,7 +81,7 @@ export default function Carousel() {
           })}
 
           {/* Espaçador final */}
-          <div className="w-[7.5%] md:w-[20%] shrink-0" />
+          <div className="w-[20%] md:w-[27.5%] shrink-0" />
         </div>
       </div>
 
