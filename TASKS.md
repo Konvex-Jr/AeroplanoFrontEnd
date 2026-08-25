@@ -35,7 +35,7 @@
             - [X] Remover Telefones e Adicionar Ícones do Whatsapp    *Gabriel*
             - [X] Projetos → Portfólio                                *Gabriel*
             - [X] Tornar Ícone do Whatsapp mais Largo                 *Gabriel*
-            - [ ] Flex Column para Mobile                             *Gabriel*
+            - [X] Flex Column para Mobile                             *Gabriel*
             - [ ] Criar Integração com ResendAPI                      *Gabriel*
 
     - Construir Página: Services        *Nav Absolute → Colocar Margem Top*
