@@ -34,7 +34,7 @@
         - [X] Footer Endereços e Forms para Contato                   *Gabriel*
             - [X] Remover Telefones e Adicionar Ícones do Whatsapp    *Gabriel*
             - [X] Projetos → Portfólio                                *Gabriel*
-            - [ ] Tornar Ícone do Whatsapp mais Largo                 *Gabriel*
+            - [X] Tornar Ícone do Whatsapp mais Largo                 *Gabriel*
             - [ ] Flex Column para Mobile                             *Gabriel*
             - [ ] Criar Integração com ResendAPI                      *Gabriel*
 
