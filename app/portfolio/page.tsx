@@ -6,7 +6,7 @@ export default function Page(){
             
             <Nav />
         
-            <h1>Projetos</h1>
+            <h1>Portfólio</h1>
         </div>
     )
 }

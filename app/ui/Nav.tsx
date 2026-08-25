@@ -26,8 +26,8 @@ const navigation = [
         text: "SERVIÇOS"
     },
     {
-        href: '/projetos',
-        text: "PROJETOS"
+        href: '/portfolio',
+        text: "PORTFÓLIO"
     },
     {
         href: '/#sobre',

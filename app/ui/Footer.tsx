@@ -29,7 +29,7 @@ export default function Footer({ className, id }: FooterProps){
         <div id={id} className={`${className} bg-background-footer text-white`}>
             
             {/* Contacts */}
-            <div className="flex flex-col gap-6 text-center w-full py-8 md:ml-20 lg:ml-32" >
+            <div className="flex flex-col gap-6 text-center w-full md:py-8 px-4 md:ml-20 lg:ml-32" >
                 <div className="flex gap-2" >
                     <Image src={map_icon.src} width={0} height={0} style={{ width: iconSize, height: iconSize }} alt="Ícone de Pino de Mapa" />
                     <div className="text-start text-[2cqw] md:text-lg" >
@@ -37,18 +37,6 @@ export default function Footer({ className, id }: FooterProps){
                         <p>Joinville SC Brasil</p>
                     </div>
                 </div>
-                {/* <div className="flex gap-4" >
-                    <Image src={phone_icon.src} width={0} height={0} style={{ width: iconSize, height: iconSize }} alt="Ícone de Telefone" />
-                    <div className="text-start text-[2cqw] md:text-lg" >
-                        <p>(47) 99962-6217</p>
-                    </div>
-                </div>
-                <div className="flex gap-4" >
-                    <Image src={phone_icon.src} width={0} height={0} style={{ width: iconSize, height: iconSize }} alt="Ícone de Telefone" />
-                    <div className="text-start text-[2cqw] md:text-lg" >
-                        <p>(47) 99108-5092</p>
-                    </div>
-                </div> */}
                 <div className="flex gap-4" >
                     <Image src={email_icon.src} width={0} height={0} style={{ width: iconSize, height: iconSize }} alt="Ícone de Email" />
                     <div className="text-start text-[2cqw] md:text-lg" >
@@ -65,7 +53,7 @@ export default function Footer({ className, id }: FooterProps){
                     <div className="flex flex-col justify-center gap-2 text-[2cqw] md:text-lg">
                         <p>Agende uma conversa</p>
                         <Link className="flex justify-center" href={`https://wa.me/5547999626217`} >
-                            <div className=" w-[8cqw] h-[6cqw] lg:w-[5cqw] lg:h-[3cqw] flex items-center justify-center bg-green-600 hover:bg-green-700 rounded-4xl" >
+                            <div className=" w-[12cqw] h-[5cqw] lg:w-[8cqw] lg:h-[3cqw] flex items-center justify-center bg-green-600 hover:bg-green-700 rounded-4xl" >
                                 <FaWhatsapp className="relative w-[65%] h-[65%]" />
                             </div>
                         </Link>

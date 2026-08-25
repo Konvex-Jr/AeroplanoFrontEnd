@@ -14,7 +14,7 @@
             - [X] Inserir Hover de Cores nos Links                  *Gabriel*
             - [X] Implementar Navegação para Home (SOBRE e CONTATO) *Gabriel*
         - [X] Header                  *Gabriel*
-            - [ ] Recortar Imagem do Header para Enquadrar no Desktop *Gabriel*
+            - [X] Recortar Imagem do Header para Enquadrar no Desktop *Gabriel*
         - [X] Adicionar Faixa Branca  *Gabriel*
         - [X] Section Experience             *Guilherme*
             - [X] Corrigir Alinhamentos      *Gabriel*
@@ -33,9 +33,9 @@
             - [ ] Adicionar Saiba Mais → Mini Biografia               *Gabriel*
         - [X] Footer Endereços e Forms para Contato                   *Gabriel*
             - [X] Remover Telefones e Adicionar Ícones do Whatsapp    *Gabriel*
-            - [ ] Projetos → Portfólio                                *Gabriel*
-            - [ ] Tornar Ícone do Whatsapp mais Largo                 *Gabriel*
-            - [ ] Flex Column para Mobile                             *Gabriel*
+            - [X] Projetos → Portfólio                                *Gabriel*
+            - [X] Tornar Ícone do Whatsapp mais Largo                 *Gabriel*
+            - [X] Flex Column para Mobile                             *Gabriel*
             - [ ] Criar Integração com ResendAPI                      *Gabriel*
 
     - Construir Página: Services        *Nav Absolute → Colocar Margem Top*
