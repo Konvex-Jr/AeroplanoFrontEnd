@@ -65,7 +65,7 @@ export default function Footer({ className, id }: FooterProps){
                     <div className="flex flex-col justify-center gap-2 text-[2cqw] md:text-lg">
                         <p>Agende uma conversa</p>
                         <Link className="flex justify-center" href={`https://wa.me/5547999626217`} >
-                            <div className=" w-[8cqw] h-[6cqw] lg:w-[5cqw] lg:h-[3cqw] flex items-center justify-center bg-green-600 hover:bg-green-700 rounded-4xl" >
+                            <div className=" w-[12cqw] h-[5cqw] lg:w-[8cqw] lg:h-[3cqw] flex items-center justify-center bg-green-600 hover:bg-green-700 rounded-4xl" >
                                 <FaWhatsapp className="relative w-[65%] h-[65%]" />
                             </div>
                         </Link>
