@@ -14,24 +14,29 @@
             - [X] Inserir Hover de Cores nos Links                  *Gabriel*
             - [X] Implementar Navegação para Home (SOBRE e CONTATO) *Gabriel*
         - [X] Header                  *Gabriel*
+            - [ ] Recortar Imagem do Header para Enquadrar no Desktop *Gabriel*
         - [X] Adicionar Faixa Branca  *Gabriel*
         - [X] Section Experience             *Guilherme*
             - [X] Corrigir Alinhamentos      *Gabriel*
             - [X] Corrigir Tamanho de Fonte  *Gabriel*
         - [X] Section About           *Guilherme*
         - [X] Section Flip Carroussel *Guilherme*
-            - [ ] Corrigir Imagens              *Guilherme*
-            - [ ] Corrigir Animação             *Guilherme*
+            - [X] Corrigir Imagens              *Guilherme*
+            - [X] Corrigir Animação             *Guilherme*
             - [ ] Corrigir Navegação por Clique *Guilherme*
-            - [ ] Corrigir p/ Mobile            *Guilherme*
+            - [X] Corrigir p/ Mobile            *Guilherme*
         - [X] Section Customers       *Guilherme*
         - [X] Section Founders        *Guilherme*
-            - [X] Corrigir Cores da Fonte e Ícones 
+            - [X] Corrigir Cores da Fonte e Ícones
                     > Ícones: *#325A76*
                     > Fonte : *#52758B*
-        - [X] Footer Endereços e Forms para Contato                 *Gabriel*
-            - [X] Remover Telefones e Adicionar Ícones do Whatsapp  *Gabriel*
-            - [ ] Criar Integração com ResendAPI                    *Gabriel*
+            - [ ] Adicionar Saiba Mais → Mini Biografia               *Gabriel*
+        - [X] Footer Endereços e Forms para Contato                   *Gabriel*
+            - [X] Remover Telefones e Adicionar Ícones do Whatsapp    *Gabriel*
+            - [ ] Projetos → Portfólio                                *Gabriel*
+            - [ ] Tornar Ícone do Whatsapp mais Largo                 *Gabriel*
+            - [ ] Flex Column para Mobile                             *Gabriel*
+            - [ ] Criar Integração com ResendAPI                      *Gabriel*
 
     - Construir Página: Services        *Nav Absolute → Colocar Margem Top*
         - [X] Nav (mobile e desktop)
@@ -40,7 +45,7 @@
     
     - Construir Página: Portfolio       *Nav Absolute → Colocar Margem Top*
         - [X] Nav (mobile e desktop)
-        - [ ] Section Portfolio (mobile e desktop) 
+        - [ ] Section Portfolio (mobile e desktop) *Guilherme*
         - [X] Footer Endereços e Forms para Contato 
 
     - Construir Página: Blog            *Nav Absolute → Colocar Margem Top*
