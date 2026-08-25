@@ -1,16 +1,23 @@
+"use client"
 
-import fundo_header from "@/public/tela_inicial_fundo_2026_v2_recortada.webp"
+import fundo_header_mobile from "@/public/tela_inicial_fundo_2026_v2_recortada.webp"
+import fundo_header_desktop from "@/public/tela_inicial_fundo_2026_v2_rerecortada.webp"
+
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
+import { useWindowWidth } from "../lib/hooks/useWindowWidth";
 
 export default function Header() {
+
+  const width = useWindowWidth()
+
   return (
 
     <header className="relative z-10 w-full @container text-white">
       
       <img 
         className="w-full h-full object-cover object-top block" 
-        src={fundo_header.src} 
+        src={width < 1024 ? fundo_header_mobile.src : fundo_header_desktop.src} 
         alt="Imagem da Tela Inicial" 
       />
 
@@ -20,13 +27,13 @@ export default function Header() {
         </div>
       </Link>
 
-      <div className="absolute top-[30%] left-[18%] w-[80%] xl:top-[25%] flex flex-col gap-[2cqw]">
+      <div className="absolute top-[30%] left-[18%] w-[80%] lg:top-[25%] flex flex-col gap-[2cqw]">
         
-        <h1 className="relative font-bold left-1 text-[4cqw] w-[70%] xl:w-[40%] xl:text-[3.7cqw] leading-tight">
+        <h1 className="relative font-bold left-1 text-[4cqw] w-[70%] lg:w-[40%] lg:text-[2cqw] leading-tight">
           criar produtos atraentes é a nossa essência
         </h1>
         
-        <h2 className="font-normal text-[2.5cqw] leading-tight">
+        <h2 className="font-normal text-[2cqw] leading-tight">
           e ideias criativas precisam ser viáveis
         </h2>
         

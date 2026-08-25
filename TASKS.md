@@ -14,7 +14,7 @@
             - [X] Inserir Hover de Cores nos Links                  *Gabriel*
             - [X] Implementar Navegação para Home (SOBRE e CONTATO) *Gabriel*
         - [X] Header                  *Gabriel*
-            - [ ] Recortar Imagem do Header para Enquadrar no Desktop *Gabriel*
+            - [X] Recortar Imagem do Header para Enquadrar no Desktop *Gabriel*
         - [X] Adicionar Faixa Branca  *Gabriel*
         - [X] Section Experience             *Guilherme*
             - [X] Corrigir Alinhamentos      *Gabriel*
