@@ -4,7 +4,7 @@ export default function Page(){
     return (
         <div>
 
-            <Nav />
+            <Nav className="relative" />
 
             <h1>Blog</h1>
         </div>

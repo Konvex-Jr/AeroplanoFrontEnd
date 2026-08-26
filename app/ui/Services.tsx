@@ -1,0 +1,102 @@
+
+import consultoria_bg       from "@/public/consultoria_background.webp"
+import design_grafico_bg    from "@/public/design_grafico_background.webp"
+import design_de_produto_bg from "@/public/design_de_produto_background.webp"
+import Image, { StaticImageData } from "next/image"
+import { span } from "motion/react-client"
+
+interface ServicesProps {
+    className?: string
+}
+
+interface ServiceCardProp {
+    title: string
+    info:  string
+    list:  string[]
+    background: StaticImageData
+}
+
+const services: ServiceCardProp[] = [
+    {
+        title: "Design de Produto",
+        info: "Cada projeto é executado num contexto único com foco em execução ágil, com melhor equilíbrio possível entre investimento e resultado",
+        list: [
+            "Conceito",
+            "Geração de Alternativas",
+            "Análise Preliminar de Execução (materiais e processos)",
+            "Modelagem 3D",
+            "Renderings | Simulação Virtual",
+            "Mockup",
+            "Protótipo",
+            "Acompanhamento do Projeto Técnico"
+        ],
+        background: design_de_produto_bg
+    },
+    {
+        title: "Design Gráfico",
+        info: "",
+        list: [
+            "Linguagem Gráfica de Produtos",
+            "Interfaces Gráficas",
+            "Especificação de Cores, Acabamentos e Materiais",
+            "Lógica de Uso",
+            "Naming"
+        ],
+        background: design_grafico_bg
+    },
+    {
+        title: "Consultoria",
+        info: "",
+        list: [
+            "Design Thinking",
+            "Estratégia de Marca no Produto",
+            "Conversão de Atributos de Marca em Produto",
+            "Análise de Portfólio e Posicionamento (funcionalidade, atratividade e competitividade)",
+            "Avaliação de Usabilidade",
+            "Avaliação de Qualidade Percebida"
+        ],
+        background: consultoria_bg
+    }
+]
+
+function ServiceCard({ title, info, list, background }: ServiceCardProp){
+
+    return (
+        <div className="relative w-full overflow-hidden">
+            <Image
+                loading="eager"
+                src={background.src} 
+                alt={`Plano de Fundo ${title}`}
+                fill
+                className="object-cover -z-10"
+                quality={100}
+            />
+            <div className="relative flex flex-col gap-4 z-10 text-white p-8">
+                <h1 className="text-[4cqw] md:text-3xl" >{ title }</h1>
+                <p className="text-[3cqw] md:text-xl max-w-120" >{ info }</p>
+
+                <div className="flex flex-col" >
+                    {
+                        list.map((item, index) => {
+                            return ( <span key={index} className="text-[3cqw] md:text-xl" >{ item }</span> )
+                        })
+                    }
+                </div>
+
+            </div>
+    </div>
+    )
+
+}
+
+export default function Services({ className }: ServicesProps){
+
+    return (
+        <section className={`${className} flex flex-col gap-4`} >
+            { services.map((card, index) => {
+                return <ServiceCard key={index} title={card.title} info={card.info} list={card.list} background={card.background} />
+            }) }
+        </section>
+    )
+
+}

@@ -43,7 +43,11 @@ const navigation = [
     }
 ]
 
-export default function Nav(){
+interface NavProps {
+    className?: string
+}
+
+export default function Nav({ className }: NavProps){
     
     const [ open, setSideBar ] = useState(false)
 
@@ -91,12 +95,11 @@ export default function Nav(){
     return (    
         <>  
             {/* Navigation Desktop */}
-            <div className={`absolute w-full top-0 left-0 flex justify-between items-center px-8 py-10 lg:py-16`} >
+            <div className={`${className} w-full top-0 left-0 flex justify-between items-center px-8 py-10 lg:py-16`} >
 
                 {/* Imagem de Fundo */}
-                <div className="absolute inset-0 w-full h-full -z-10 bg-linear-to-r from-nav-gradient-start to-nav-gradient-end" ></div>
+                <div className="absolute inset-0 w-full h-full -z-10 bg-linear-to-r from-nav-gradient-start to-nav-gradient-end overflow-hidden" ></div>
             
-
                 <img className="h-[6cqw] lg:h-16 z-20 pl-1 lg:pl-7 lg" src={logo_aeroplano.src} alt="Logo Aeroplano" />
                 
                 {/* Sandwich to Open Sidebar */}

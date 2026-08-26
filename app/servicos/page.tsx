@@ -1,12 +1,16 @@
+import Footer from "../ui/Footer";
 import Nav from "../ui/Nav";
+import Services from "../ui/Services";
 
 export default function Page(){
     return (
         <div>
             
-            <Nav />
+            <Nav className="relative" />
 
-            <h1>Serviços</h1>
+            <Services />
+
+            <Footer id={"contato"} />
             
         </div>
     ) 
