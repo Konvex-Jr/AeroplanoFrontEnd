@@ -30,7 +30,7 @@
             - [X] Corrigir Cores da Fonte e Ícones
                     > Ícones: *#325A76*
                     > Fonte : *#52758B*
-            - [ ] Adicionar Saiba Mais → Mini Biografia               *Gabriel*
+            - [X] Adicionar Saiba Mais → Mini Biografia               *Gabriel*
         - [X] Footer Endereços e Forms para Contato                   *Gabriel*
             - [X] Remover Telefones e Adicionar Ícones do Whatsapp    *Gabriel*
             - [X] Projetos → Portfólio                                *Gabriel*
