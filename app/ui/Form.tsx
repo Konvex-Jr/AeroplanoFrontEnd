@@ -19,7 +19,7 @@ export default function Form(){
     }
 
     return (
-        <form className="flex flex-col gap-8 text-[2cqw] md:text-lg" onSubmit={(e) => { onSubmit(e) }} >
+        <form className="flex flex-col gap-8 text-[3cqw] md:text-lg" onSubmit={(e) => { onSubmit(e) }} >
 
             <div className="flex flex-col items-start gap-1">
                 <label htmlFor="name">Seu nome</label>

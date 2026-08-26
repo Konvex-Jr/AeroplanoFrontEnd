@@ -1,4 +1,6 @@
+import Footer from "../ui/Footer";
 import Nav from "../ui/Nav";
+import Services from "../ui/Services";
 
 export default function Page(){
     return (
@@ -6,7 +8,9 @@ export default function Page(){
             
             <Nav className="relative" />
 
-            {/* Serviços */}
+            <Services />
+
+            <Footer id={"contato"} />
             
         </div>
     ) 

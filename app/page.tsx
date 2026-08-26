@@ -77,7 +77,7 @@ export default function Home() {
             <Equipe/>
             
             {/* Footer */}
-            <Footer id={"contato"} className="relative bottom-0 w-full flex flex-col md:flex-row items-start justify-center px-8 gap-3 lg:gap-32 py-10" />
+            <Footer id={"contato"} />
         </main>
     )
 }
