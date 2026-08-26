@@ -40,7 +40,7 @@
 
     - Construir Página: Services        *Nav Absolute → Colocar Margem Top*
         - [X] Nav (mobile e desktop)
-        - [ ] Sections (design de produto, design gráfico e consultoria) *Gabriel*
+        - [X] Sections (design de produto, design gráfico e consultoria) *Gabriel*
         - [X] Footer Endereços e Forms para Contato
     
     - Construir Página: Portfolio       *Nav Absolute → Colocar Margem Top*
