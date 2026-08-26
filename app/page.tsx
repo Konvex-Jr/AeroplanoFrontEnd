@@ -8,7 +8,7 @@ export default function Home() {
     return (
         <main className="flex flex-col" >
 
-            <Nav />
+            <Nav className="absolute" />
             <Header />
 
             <div className="w-full h-[1cqw] bg-white" ></div>

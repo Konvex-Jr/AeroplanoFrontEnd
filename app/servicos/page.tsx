@@ -4,9 +4,9 @@ export default function Page(){
     return (
         <div>
             
-            <Nav />
+            <Nav className="relative" />
 
-            <h1>Serviços</h1>
+            {/* Serviços */}
             
         </div>
     ) 
