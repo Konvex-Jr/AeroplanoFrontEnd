@@ -15,6 +15,7 @@
             - [X] Implementar Navegação para Home (SOBRE e CONTATO) *Gabriel*
         - [X] Header                  *Gabriel*
             - [X] Recortar Imagem do Header para Enquadrar no Desktop *Gabriel*
+            - [X] Corrigir Número de Linhas para Desktop              *Gabriel*
         - [X] Adicionar Faixa Branca  *Gabriel*
         - [X] Section Experience             *Guilherme*
             - [X] Corrigir Alinhamentos      *Gabriel*
@@ -41,6 +42,7 @@
     - Construir Página: Services        *Nav Absolute → Colocar Margem Top*
         - [X] Nav (mobile e desktop)
         - [X] Sections (design de produto, design gráfico e consultoria) *Gabriel*
+            - [ ] Inserir um Gradiente Escuro *Gabriel*
         - [X] Footer Endereços e Forms para Contato
     
     - Construir Página: Portfolio       *Nav Absolute → Colocar Margem Top*
@@ -50,12 +52,12 @@
 
     - Construir Página: Blog            *Nav Absolute → Colocar Margem Top*
         - [X] Nav (mobile e desktop)
-        - [ ] Post Card Component
+        - [ ] Post Card Component  
         - [ ] Section Posts (integrar com a API)
         - [X] Footer Endereços e Forms para Contato
 
-- [ ] Construir API do Blog
-- [ ] Integrar Blog com a API
+- [ ] Construir API do Blog   *Gabriel*
+- [ ] Integrar Blog com a API 
 
 ## Client Side
 
