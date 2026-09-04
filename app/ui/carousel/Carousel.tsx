@@ -62,12 +62,15 @@ export default function Carousel() {
                 className="w-[60%] md:w-[45%] shrink-0"
               >
                 <div
+                  onClick={() => {
+                    if (!isActive) goToSlide(index);
+                  }}
                   style={{
                     transform: isActive ? "scale(1)" : "scale(0.97)",
                     opacity: isActive ? 1 : 0.5,
                     transition:
                       "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease",
-                    pointerEvents: isActive ? "auto" : "none",
+                    cursor: isActive ? "default" : "pointer",
                   }}
                 >
                   <CarouselCard
