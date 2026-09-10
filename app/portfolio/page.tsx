@@ -5,6 +5,7 @@ import Nav from "../ui/Nav";
 import { portfolioProjects, type PortfolioProject } from "@/app/lib/portfolio";
 import PortfolioCard from "./portfolioCard";
 import PortfolioModal from "./portfolioModal";
+import Footer from "../ui/Footer";
 
 export default function Page() {
   const [openProject, setOpenProject] = useState<PortfolioProject | null>(null);
@@ -28,6 +29,8 @@ export default function Page() {
       {openProject && (
         <PortfolioModal project={openProject} onClose={() => setOpenProject(null)} />
       )}
+
+      <Footer id="#footer" />
     </div>
   );
 }
