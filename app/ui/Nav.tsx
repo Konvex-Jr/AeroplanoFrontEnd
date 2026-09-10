@@ -19,7 +19,7 @@ const MAX_WIDTH = 960
 const navigation = [
     {
         href: '/',
-        text: "INICIO"
+        text: "INÍCIO"
     },
     {
         href: '/servicos',
