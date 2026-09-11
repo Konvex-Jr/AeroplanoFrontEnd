@@ -1,3 +1,5 @@
+import Blog from "../ui/Blog";
+import Footer from "../ui/Footer";
 import Nav from "../ui/Nav";
 
 export default function Page(){
@@ -6,7 +8,9 @@ export default function Page(){
 
             <Nav className="relative" />
 
-            <h1>Blog</h1>
+            <Blog />
+
+            <Footer id="#footer" />
         </div>
     )
 }
