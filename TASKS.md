@@ -7,7 +7,7 @@
 - [X] Página Blog: Post Card Component  
 - [X] Página Blog: Section Posts (integrar com a API)
 
-- [ ] View Post : Criar Modal
+- [X] View Post : Criar Modal
 
 - [ ] Página Autenticação
 
