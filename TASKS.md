@@ -2,10 +2,14 @@
 
 - [ ] Formulário Footer: Criar Integração com ResendAPI
 
-- [ ] Página Portfólio: Seção Portfolio (mobile e desktop)
+- [X] Página Portfólio: Seção Portfolio (mobile e desktop)
 
-- [ ] Página Blog: Post Card Component  
-- [ ] Página Blog: Section Posts (integrar com a API)
+- [X] Página Blog: Post Card Component  
+- [X] Página Blog: Section Posts (integrar com a API)
+
+- [ ] View Post : Criar Modal
+
+- [ ] Página Autenticação
 
 - [ ] Construir API do Blog
 - [ ] Integrar Blog com a API
