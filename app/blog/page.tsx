@@ -1,3 +1,4 @@
+import { posts } from "../api/getPosts";
 import Blog from "../ui/Blog";
 import Footer from "../ui/Footer";
 import Nav from "../ui/Nav";
@@ -8,7 +9,7 @@ export default function Page(){
 
             <Nav className="relative" />
 
-            <Blog />
+            <Blog posts={posts} />
 
             <Footer id="#footer" />
         </div>

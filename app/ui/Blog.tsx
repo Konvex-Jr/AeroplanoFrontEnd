@@ -1,32 +1,43 @@
-import { convertToBuffer } from "@/app/lib/convertToBuffer";
-import BlogCard, { Post } from "./BlogCard";
+"use client"
 
-const img001 = await convertToBuffer("public/projetos/Carr_Actigrafo_imagem.png")
-const img002 = await convertToBuffer("public/projetos/Carr_Cervejeira_imagem.png")
+import { useState } from "react";
+import { Post } from "../lib/post";
+import View from "./View";
 
-export const posts: Post[] = [
-    { 
-        id: "id00",
-        title: "Num mundo visual é preciso dar vida aos sonhos",
-        image: img001,
-        content: "content"
-    },
-        { 
-        id: "id01",
-        title: "Atratividade: Como o design constrói este valor no produto",
-        image: img002,
-        content: "content"
-    }
-]
+interface BlogProps {
+    posts: Post[]
+}
 
-export default function Blog(){
+export default function Blog({ posts }: BlogProps){
+
+    const [ selectedPost, setSelectedPost ] = useState<Post | null>(null)
+
+    const openModal = (post: Post) => setSelectedPost(post)
+    const closeModal = ()          => setSelectedPost(null)
 
     return (
-        <div className="flex flex-col justify-center items-center lg:grid lg:grid-cols-2 px-6 my-6 gap-2" >
-            { posts.map(({ id, title, image, content }: Post) => {
-                return <BlogCard key={id} id={id} content={content} image={image} title={title} />
-            }) }
-        </div>
+        <>  
+            {/* Posts Grid */}
+            <div className="flex flex-col justify-center items-center lg:grid lg:grid-cols-2 xl:grid-cols-3 px-6 my-6 gap-2" >
+                { posts.map((post: Post) => {
+
+                    const { id, image, title } = post
+
+                    return (
+                        <div key={id} id={id} onClick={() => openModal(post) } >  
+                            <div className="flex flex-col items-center w-fit rounded-2xl hover:shadow hover:scale-101 transition-all duration-150 cursor-pointer">
+                                <img className="rounded-t-2xl object-cover" src={image} alt="Imagem do Post" />
+                                <h1 className="bg-white w-full p-4 text-center rounded-b-2xl text-xs sm:text-lg lg:text-xl" >{title}</h1>
+                            </div>
+                        </div>
+                    )
+                }) }
+            </div>        
+
+            {/* View Component */}
+            { selectedPost && <View post={selectedPost} onClose={closeModal} /> }
+        </>
+
     )
 
 }
