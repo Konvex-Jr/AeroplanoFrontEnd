@@ -7,21 +7,21 @@ const img003 = await convertToByte64("public/projetos/Carr_Tesoura_imagem.png")
 
 export const posts: Post[] = [
     { 
-        id:      "id00",
+        id:      "1",
         title:   "Num mundo visual é preciso dar vida aos sonhos",
         image:   img001,
-        content: "content"
+        content: "Conteúdo."
     },
         { 
-        id:      "id01",
+        id:      "2",
         title:   "Atratividade: Como o design constrói este valor no produto",
         image:   img002,
-        content: "content"
+        content: "Conteúdo."
     },
     { 
-        id:      "id02",
-        title:   "Tesoura",
+        id:      "3",
+        title:   "Valor percebido: Como o design transforma utilidade em desejo.",
         image:   img003,
-        content: "Uma tesoura magnífica"
+        content: "Conteúdo."
     }
 ]
