@@ -1,5 +1,5 @@
 import { cookies } from "next/headers"
-import { posts } from "../api/getPosts";
+import { posts } from "../lib/posts";
 import Blog from "../ui/Blog";
 import Footer from "../ui/Footer";
 import Nav from "../ui/Nav";
