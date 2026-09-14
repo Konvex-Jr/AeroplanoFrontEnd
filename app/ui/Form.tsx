@@ -5,17 +5,25 @@ export default function Form(){
     async function onSubmit(event: SubmitEvent<HTMLElement>){
 
         event.preventDefault()
-
-        const formData = new FormData(event.target)
-
-        for(const entry of formData.entries()){
-            console.log(entry);
-        }
         
-        event.target.reset()
+        const form = new FormData(event.target)
+        
+        const name   = form.get('name') as string
+        const email  = form.get('email') as string
+        const need   = form.get('need') as string
+        
+        // Reset the Form
+        event.target.reset()        
 
-        alert("Enviado com sucesso!")
+        // Enviar Requisição para Handler da API
+        const res: Response = await fetch("api/resend", {
+            method: "POST",
+            body: JSON.stringify({ name, email, need })
+        })
 
+        const data = JSON.stringify(await res.json())
+
+        console.log(data);
     }
 
     return (

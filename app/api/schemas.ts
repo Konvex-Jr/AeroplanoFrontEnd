@@ -7,4 +7,10 @@ const loginUserBodySchema = z.object({
     password: z.string()
 })
 
-export { loginUserBodySchema }
+const sendEmailBodySchema = z.object({
+    name:  z.string(),
+    email: z.string(),
+    need:  z.string()
+})
+
+export { loginUserBodySchema, sendEmailBodySchema }
