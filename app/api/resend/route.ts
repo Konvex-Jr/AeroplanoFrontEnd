@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export default async function handler(req: NextRequest, res: NextResponse){
+// Handler da ResendAPI.
+
+export default async function POST(req: NextRequest){
 
     // Realiza uma REQUISIÇÃO para a API da Resend
 

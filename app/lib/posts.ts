@@ -1,5 +1,20 @@
-import { Post } from "../lib/post";
 import { convertToByte64 } from "../lib/convertToByte64";
+
+export interface Post {
+    id:      string
+    title:   string
+    image:   string
+    content: string
+    
+    // file_size: number
+    // file_type: string
+
+    // created_at: Date
+    // updated_at: Date
+
+    // user_id: string
+}
+
 
 const img001 = await convertToByte64("public/projetos/Carr_Actigrafo_imagem.png")
 const img002 = await convertToByte64("public/projetos/Carr_Cervejeira_imagem.png")
