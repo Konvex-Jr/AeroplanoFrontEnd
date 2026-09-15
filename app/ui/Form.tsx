@@ -50,9 +50,3 @@ export default function Form(){
     )
 
 }
-
-// Fluxo de Submit do Formulário
-
-// 1. Envia para HANDLER do Componente
-// 2. Envia para HANDLER da API
-// 3. Envia a REQUISIÇÃO

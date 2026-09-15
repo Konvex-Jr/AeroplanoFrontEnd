@@ -29,13 +29,13 @@ export default function Header() {
 
       <div className="absolute top-[30%] left-[18%] w-[80%] lg:top-[25%] flex flex-col gap-[2cqw]">
         
-        <h1 className="relative font-bold left-1 text-[4cqw] w-[60%] lg:w-[32%] lg:text-[2.2cqw] leading-tight">
-          criar produtos atraentes é a nossa essência
-        </h1>
-        
-        <h2 className="font-normal text-[2cqw] leading-tight">
-          e ideias criativas precisam ser viáveis
-        </h2>
+      <h1 className="relative font-bold left-1 text-[4.6cqw] w-[70%] lg:w-[42%] lg:text-[2.6cqw] leading-tight tracking-tight">
+        criar produtos atraentes é a nossa essência
+      </h1>
+               
+      <h1 className="relative left-1 text-[2cqw] w-[60%] lg:w-[32%] lg:text-[2cqw] leading-tight tracking-tight">
+         e ideias criativas precisam ser viáveis
+      </h1>
         
       </div>
     </header>
