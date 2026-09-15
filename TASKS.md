@@ -24,7 +24,8 @@
     - [ ] Criar Auth (não consigo acessar o access-token pelos cookies) *Gabriel / Perozin*
         > Criar /me no Servidor para Validar Identidade.
         > Retornar Access Token no Body da Resposta.
-    - [ ] Alterar Estilos e Redirecionamento                            *Gabriel / Perozin*
+    - [ ] Implementar Redirecionamento + Toast de Sucesso / Falha.
+    - [X] Alterar Estilos                                               *Gabriel / Perozin*
 
 - [X] Página Portfólio: Seção Portfolio (mobile e desktop)
 
