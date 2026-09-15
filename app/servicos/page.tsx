@@ -4,7 +4,7 @@ import Services from "../ui/Services";
 
 export default function Page(){
     return (
-        <div>
+        <div >
             
             <Nav className="relative" />
 

@@ -59,40 +59,42 @@ const services: ServiceCardProp[] = [
     }
 ]
 
-function ServiceCard({ title, info, list, background }: ServiceCardProp){
+function ServiceCard({ title, info, list, background }: ServiceCardProp) {
+  return (
+    <div className="relative w-full overflow-hidden bg-jet-black">
+      <div className="relative aspect-4/3 md:aspect-video w-full">
+        <Image
+          loading="eager"
+          src={background.src}
+          alt={`Plano de Fundo ${title}`}
+          fill
+          className="object-contain object-top"
+          quality={100}
+        />
+      </div>
 
-    return (
-        <div className="relative w-full overflow-hidden">
-            <Image
-                loading="eager"
-                src={background.src} 
-                alt={`Plano de Fundo ${title}`}
-                fill
-                className="object-cover -z-10"
-                quality={100}
-            />
-            <div className="relative flex flex-col gap-4 z-10 text-white p-8">
-                <h1 className="text-[4cqw] md:text-3xl" >{ title }</h1>
-                <p className="text-[3cqw] md:text-xl max-w-120" >{ info }</p>
+      <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background-footer to-transparent md:bg-linear-to-r" />
 
-                <div className="flex flex-col" >
-                    {
-                        list.map((item, index) => {
-                            return ( <span key={index} className="text-[3cqw] md:text-xl" >{ item }</span> )
-                        })
-                    }
-                </div>
+      <div className="relative z-10 flex flex-col gap-4 text-white p-8 md:absolute md:inset-0 md:justify-center md:items-start md:text-left">
+        <h1 className="text-[4cqw] md:text-3xl">{title}</h1>
+        <p className="text-[3cqw] md:text-xl max-w-[120ch] md:max-w-sm">{info}</p>
 
-            </div>
+        <div className="flex flex-col md:items-start">
+          {list.map((item, index) => (
+            <span key={index} className="text-[3cqw] md:text-xl">
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
-    )
-
+  );
 }
 
 export default function Services({ className }: ServicesProps){
 
     return (
-        <section className={`${className} flex flex-col gap-4`} >
+        <section className={`${className} flex flex-col gap-4 bg-background-footer`} >
             { services.map((card, index) => {
                 return <ServiceCard key={index} title={card.title} info={card.info} list={card.list} background={card.background} />
             }) }
