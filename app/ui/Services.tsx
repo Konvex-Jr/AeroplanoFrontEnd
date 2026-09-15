@@ -1,9 +1,8 @@
 
-import consultoria_bg       from "@/public/consultoria_background.webp"
-import design_grafico_bg    from "@/public/design_grafico_background.webp"
-import design_de_produto_bg from "@/public/design_de_produto_background.webp"
+import consultoria_bg       from "@/public/consultoria_background_1600_900.webp"
+import design_grafico_bg    from "@/public/design_grafico_background_1600_900.webp"
+import design_de_produto_bg from "@/public/design_de_produto_background_1600_900.webp"
 import Image, { StaticImageData } from "next/image"
-import { span } from "motion/react-client"
 
 interface ServicesProps {
     className?: string
@@ -62,26 +61,27 @@ const services: ServiceCardProp[] = [
 function ServiceCard({ title, info, list, background }: ServiceCardProp) {
   return (
     <div className="relative w-full overflow-hidden bg-jet-black">
-      <div className="relative aspect-4/3 md:aspect-video w-full">
+      <div className="relative aspect-video w-full">
         <Image
           loading="eager"
           src={background.src}
           alt={`Plano de Fundo ${title}`}
           fill
-          className="object-contain object-top"
+          className="object-cover object-top"
           quality={100}
         />
+      <div className="pointer-events-none absolute -bottom-1 inset-0 bg-linear-to-t from-background-footer to-transparent md:bg-none" />
       </div>
 
       <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background-footer to-transparent md:bg-linear-to-r" />
 
-      <div className="relative z-10 flex flex-col gap-4 text-white p-8 md:absolute md:inset-0 md:justify-center md:items-start md:text-left">
-        <h1 className="text-[4cqw] md:text-3xl">{title}</h1>
-        <p className="text-[3cqw] md:text-xl max-w-[120ch] md:max-w-sm">{info}</p>
+      <div className="relative z-10 flex flex-col p-8 gap-4 text-white md:absolute md:inset-0 md:justify-top md:items-start md:text-left">
+        <h1 className="text-[4cqw] md:text-xl lg:text-3xl">{title}</h1>
+        <p className="text-[3cqw] md:text-lg lg:text-xl max-w-[120ch] md:max-w-sm">{info}</p>
 
         <div className="flex flex-col md:items-start">
           {list.map((item, index) => (
-            <span key={index} className="text-[3cqw] md:text-xl">
+            <span key={index} className="text-[3cqw] md:text-lg lg:text-xl">
               {item}
             </span>
           ))}
