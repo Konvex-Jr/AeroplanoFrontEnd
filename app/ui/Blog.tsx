@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { Post } from "../lib/post";
+import { Post } from "../lib/posts";
 import View from "./View";
 
 interface BlogProps {
