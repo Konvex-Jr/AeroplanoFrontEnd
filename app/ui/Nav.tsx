@@ -33,11 +33,10 @@ const navigation = [
         href: '/#sobre',
         text: "SOBRE"
     },
-    // Remover BLOG por ENQUANTO
-    // {
-    //     href: '/blog',
-    //     text: "BLOG"
-    // },
+    {
+        href: '/blog',
+        text: "BLOG"
+    },
     {
         href: '/#contato',
         text: "CONTATO"
