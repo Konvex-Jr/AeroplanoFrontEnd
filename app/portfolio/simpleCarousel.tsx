@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import CarouselDots from "@/app/ui/carousel/CarouselDots";
 
 interface SimpleCarouselProps {
@@ -17,22 +17,7 @@ export default function SimpleCarousel({
   fit = "cover",
 }: SimpleCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const trackRef = useRef<HTMLDivElement>(null);
-
   const total = images.length;
-
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    const slide = track.children[currentIndex + 1] as HTMLElement;
-    if (!slide) return;
-
-    const target =
-      slide.offsetLeft + slide.offsetWidth / 2 - track.clientWidth / 2;
-
-    track.scrollTo({ left: Math.max(0, target), behavior: "smooth" });
-  }, [currentIndex]);
 
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
@@ -46,49 +31,62 @@ export default function SimpleCarousel({
     setCurrentIndex(index);
   };
 
+  const prevIndex = (currentIndex - 1 + total) % total;
+  const nextIndex = (currentIndex + 1) % total;
+
+  const imgClass = `h-full w-full ${fit === "contain" ? "object-contain" : "object-cover"}`;
+  const imgStyle = {
+    objectPosition: imagePosition,
+    transform: `scale(${imagemZoom})`,
+  };
+
   return (
     <div className="w-full">
-      <div className="relative w-full">
-        <style>{`.simple-carousel-track::-webkit-scrollbar { display: none; }`}</style>
+      <style>{`
+        @keyframes carousel-fade-in {
+          from { opacity: 0; transform: scale(0.96); }
+          to { opacity: 1; transform: scale(1); }
+        }
+      `}</style>
 
-        <div
-          ref={trackRef}
-          className="simple-carousel-track flex py-6"
-          style={{ overflowX: "scroll", scrollbarWidth: "none" } as React.CSSProperties}
-        >
-          <div className="w-[7.5%] md:w-[10%] shrink-0" />
-
-          {images.map((src, index) => {
-            const isActive = index === currentIndex;
-            return (
-              <div key={src + index} className="w-[85%] md:w-[80%] shrink-0">
-                <div
-                  onClick={() => {
-                    if (!isActive) goToSlide(index);
-                  }}
-                  style={{
-                    transform: isActive ? "scale(1)" : "scale(0.95)",
-                    opacity: isActive ? 1 : 0.5,
-                    transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease",
-                    cursor: isActive ? "default" : "pointer",
-                  }}
-                  className="aspect-[3/2] w-full overflow-hidden rounded-xl bg-white shadow-xl"
-                >
-                  <img
-                    src={src}
-                    alt=""
-                    className={`h-full w-full ${fit === "contain" ? "object-contain" : "object-cover"}`}
-                    style={{
-                      objectPosition: imagePosition,
-                      transform: `scale(${imagemZoom})`,
-                    }}
-                  />
-                </div>
+      <div className="relative mx-auto w-full max-w-3xl px-[8%] py-4 sm:px-[10%]">
+        <div className="relative aspect-[3/2] w-full">
+          {/* card anterior — menor, atrás, parcialmente coberto à esquerda */}
+          {total > 1 && (
+            <button
+              type="button"
+              onClick={goToPrevious}
+              aria-label="Imagem anterior"
+              className="absolute left-0 top-1/2 z-10 w-[85%] -translate-x-[30%] -translate-y-1/2 cursor-pointer overflow-hidden rounded-xl bg-white opacity-60 shadow-lg transition-all duration-500"
+            >
+              <div key={`prev-${prevIndex}`} className="aspect-[3/2] w-full" style={{ animation: "carousel-fade-in 0.4s ease" }}>
+                <img src={images[prevIndex]} alt="" className={imgClass} style={imgStyle} />
               </div>
-            );
-          })}
+            </button>
+          )}
 
-          <div className="w-[7.5%] md:w-[10%] shrink-0" />
+          {/* card seguinte — menor, atrás, parcialmente coberto à direita */}
+          {total > 1 && (
+            <button
+              type="button"
+              onClick={goToNext}
+              aria-label="Próxima imagem"
+              className="absolute right-0 top-1/2 z-10 w-[85%] -translate-y-1/2 translate-x-[30%] cursor-pointer overflow-hidden rounded-xl bg-white opacity-60 shadow-lg transition-all duration-500"
+            >
+              <div key={`next-${nextIndex}`} className="aspect-[3/2] w-full" style={{ animation: "carousel-fade-in 0.4s ease" }}>
+                <img src={images[nextIndex]} alt="" className={imgClass} style={imgStyle} />
+              </div>
+            </button>
+          )}
+
+          {/* card ativo — em destaque, por cima, tamanho cheio */}
+          <div
+            key={`active-${currentIndex}`}
+            className="absolute inset-0 z-20 overflow-hidden rounded-2xl bg-white shadow-2xl"
+            style={{ animation: "carousel-fade-in 0.4s ease" }}
+          >
+            <img src={images[currentIndex]} alt="" className={imgClass} style={imgStyle} />
+          </div>
         </div>
       </div>
 
