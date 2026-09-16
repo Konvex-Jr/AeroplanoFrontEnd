@@ -18,7 +18,7 @@ export default function Blog({ posts }: BlogProps){
     return (
         <>  
             {/* Posts Grid */}
-            <div className="flex flex-col justify-center items-center lg:grid lg:grid-cols-2 xl:grid-cols-3 px-6 my-6 gap-4" >
+            <div className="flex flex-col justify-center items-start lg:grid lg:grid-cols-2 xl:grid-cols-3 px-6 my-6 gap-4" >
                 { posts.map((post: Post) => {
 
                     const { id, image, title } = post
