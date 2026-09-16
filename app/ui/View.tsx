@@ -17,7 +17,7 @@ export default function View({ onClose, post }: ViewProps){
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4" onClick={onClose}>
 
             {/* View */}
-            <div id={id} className="relative top-0 w-full max-w-4xl h-[50%] overflow-hidden rounded-lg bg-white shadow-xl" onClick={(e) => e.stopPropagation() } >
+            <div id={id} className="relative top-0 w-full max-w-4xl h-[80%] overflow-hidden rounded-lg bg-white shadow-xl" onClick={(e) => e.stopPropagation() } >
 
                 <div className="p-6">
                     <div className="flex items-center justify-between border-b pb-4">

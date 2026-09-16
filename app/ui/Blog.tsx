@@ -18,7 +18,7 @@ export default function Blog({ posts }: BlogProps){
     return (
         <>  
             {/* Posts Grid */}
-            <div className="flex flex-col justify-center items-center lg:grid lg:grid-cols-2 xl:grid-cols-3 px-6 my-6 gap-2" >
+            <div className="flex flex-col justify-center items-center lg:grid lg:grid-cols-2 xl:grid-cols-3 px-6 my-6 gap-4" >
                 { posts.map((post: Post) => {
 
                     const { id, image, title } = post
@@ -27,7 +27,7 @@ export default function Blog({ posts }: BlogProps){
                         <div key={id} id={id} onClick={() => openModal(post) } >  
                             <div className="flex flex-col items-center w-fit rounded-2xl hover:shadow hover:scale-101 transition-all duration-150 cursor-pointer">
                                 <img className="rounded-t-2xl object-cover" src={image} alt="Imagem do Post" />
-                                <h1 className="bg-white w-full p-4 text-center rounded-b-2xl text-xs sm:text-lg lg:text-xl" >{title}</h1>
+                                <h1 className="bg-white w-full p-2 text-center rounded-b-2xl text-xs lg:text-lg" >{title}</h1>
                             </div>
                         </div>
                     )
