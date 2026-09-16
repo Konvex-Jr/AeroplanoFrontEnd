@@ -7,7 +7,7 @@ config()
 
 // Handler da ResendAPI.
 
-export async function POST(request: NextRequest, reponse: NextResponse){
+export async function POST(request: NextRequest){
 
     const parsed = sendEmailBodySchema.safeParse(await request.json())
 

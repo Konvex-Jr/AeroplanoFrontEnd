@@ -5,7 +5,7 @@ import { loginUserBodySchema } from "../schemas"
 
 // 1. Retornar Response se OK
 
-export async function POST(request: NextRequest, response: NextResponse){
+export async function POST(request: NextRequest){
 
     const parsed = loginUserBodySchema.safeParse(await request.json())
 

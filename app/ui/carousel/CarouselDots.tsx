@@ -1,3 +1,9 @@
+interface CarouselDots {
+  total:        number
+  currentIndex: number
+  onDotClick:   any
+}
+
 export default function CarouselDots({ total, currentIndex, onDotClick }: CarouselDots) {
   return (
     <div className="flex items-center justify-center gap-2">
