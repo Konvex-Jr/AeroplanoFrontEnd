@@ -15,7 +15,16 @@ export async function POST(request: NextRequest){
 
     const { name, email, need  } = parsed.data
 
-    const emailToSend = 'exemplo@email.com'
+    // Configurar Subdomínio para konvex.com.br
+
+    // Enviar para Email da Aeroplano: ''
+
+    // Por enquanto deixa desabilitado!
+
+    return NextResponse.json({ message: "Email enviado com sucesso." }, { status: 200 })
+
+    const emailFrom = 'onboarding@resend.dev'
+    const emailToSend = 'email@example.com'
 
     // Logs da Requisição
     console.log("Name : ", name);
@@ -26,7 +35,7 @@ export async function POST(request: NextRequest){
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const res: CreateEmailResponse = await resend.emails.send({
-        from: 'onboarding@resend.dev',
+        from: emailFrom,
         to: [ emailToSend ],
         subject: `Novo Email de ${name}`,
         html: (`
