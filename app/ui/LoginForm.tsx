@@ -1,8 +1,12 @@
 "use client"
 
 import { SubmitEvent } from "react";
+import { getUserPayload, getAccessToken } from "../api/auth";
+import { useRouter } from "next/navigation";
 
 export default function LoginForm(){
+
+    const router = useRouter()
 
     async function onSubmit(event: SubmitEvent<HTMLElement>){
 
@@ -11,20 +15,38 @@ export default function LoginForm(){
         const form = new FormData(event.target)
         
         const email    = form.get('email') as string
-        const password = form.get('password') as string
-        
-        // Reset the Form
-        event.target.reset()        
+        const password = form.get('password') as string      
 
         // Enviar Requisição para Handler da API
         const res: Response = await fetch("api/login", {
-        method: "POST",
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
             body: JSON.stringify({ email, password })
         })
 
-        const result = JSON.stringify(await res.json())
+        const userPayload = getUserPayload()
 
-        console.log(result);
+        if(res.status == 200 && userPayload){
+            
+            // [ ] Utilizar um Toast
+            alert("Usuário Logado com Sucesso!")
+            
+            router.replace('/blog')
+            
+            return
+        } 
+
+        if(res.status == 401){
+
+            // [ ] Utilizar um Toast
+            alert("Usuário e/ou Senha Incorretos!")
+            return
+        }
+
+        // [ ] Utilizar um Toast
+        alert("Ops! Algo deu Errado!")
+        return
     }
 
     return (
