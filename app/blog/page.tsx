@@ -3,22 +3,18 @@ import { posts } from "../lib/posts";
 import Blog from "../ui/Blog";
 import Footer from "../ui/Footer";
 import Nav from "../ui/Nav";
+import { getUserPayload } from "../api/auth";
 
 export default async function Page(){
     
-    const cookieStore = await cookies()
+    // [ ] Implementar Componentes no Blog!
+    const userPayload = getUserPayload()
 
-    const token = cookieStore.get('access-token')
-
-    console.log(token ?? 'Não há token!');
-    
     return (
         <div>
 
             <Nav className="relative" />
         
-            {/* Sem Integração por Enquanto. */}
-
             <Blog posts={posts} />
 
             <Footer id="#footer" />
