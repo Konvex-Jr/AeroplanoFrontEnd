@@ -26,7 +26,7 @@ export default function Footer({ className, id }: FooterProps){
     const iconSize = width < 800 ? 20 : 30
     
     return (
-        <div id={id} className={`${className} bg-background-footer text-white relative bottom-0 w-full flex flex-col md:flex-row items-start justify-center px-8 gap-3 lg:gap-32 py-10`}>
+        <div id={id} className={`${className} bg-background-footer text-white relative bottom-0 w-full flex flex-col md:flex-row items-start md:items-stretch justify-center px-8 gap-3 lg:gap-32 py-10`}>
             
             {/* Contacts */}
             <div className="flex flex-col gap-6 text-center w-full md:py-8 px-4 lg:ml-20" >
@@ -49,15 +49,19 @@ export default function Footer({ className, id }: FooterProps){
                         <p>aeroplano_design</p>
                     </div>
                 </div>
-                <div className="flex flex-col items-start gap-4" >
-                    <div className="flex flex-col justify-center gap-2 text-[3cqw] md:text-lg">
-                        <p>Agende uma conversa</p>
-                        <Link className="flex justify-center" href={`https://wa.me/5547999626217`} >
-                            <div className=" w-[16cqw] h-[6cqw] lg:w-[8cqw] lg:h-[3cqw] flex items-center justify-center bg-green-600 hover:bg-green-700 rounded-4xl" >
-                                <FaWhatsapp className="relative w-[65%] h-[65%]" />
-                            </div>
-                        </Link>
-                    </div>
+
+                {/* texto fica no fluxo normal, sem ser empurrado */}
+                <div className="flex flex-col items-start text-[3cqw] md:text-lg">
+                    <p>Agende uma conversa</p>
+                </div>
+
+                {/* só o botão desce até o fim da coluna, alinhando com o Enviar */}
+                <div className="mt-auto flex justify-start">
+                    <Link href={`https://wa.me/5547999626217`} >
+                        <div className="w-[16cqw] h-[6cqw] lg:w-[8cqw] lg:h-[3cqw] flex items-center justify-center bg-green-600 hover:bg-green-700 rounded-4xl" >
+                            <FaWhatsapp className="relative w-[65%] h-[65%]" />
+                        </div>
+                    </Link>
                 </div>
             </div>
 

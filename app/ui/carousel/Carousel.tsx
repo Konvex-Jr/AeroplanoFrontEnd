@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import { projects } from "@/app/lib/projects";
 import CarouselCard from "./CarouselCard";
 import CarouselDots from "./CarouselDots";
@@ -116,6 +117,15 @@ export default function Carousel() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
           </svg>
         </button>
+      </div>
+
+      <div className="mt-8 flex justify-center">
+        <Link
+          href="/portfolio"
+          className="text-xl text-slate-600 underline underline-offset-4 transition-colors hover:text-slate-800"
+        >
+          Saiba mais
+        </Link>
       </div>
     </section>
   );
