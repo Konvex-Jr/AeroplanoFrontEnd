@@ -1,7 +1,7 @@
 
 import consultoria_bg       from "@/public/consultoria_background_1600_900.webp"
 import design_grafico_bg    from "@/public/design_grafico_background_1600_900.webp"
-import design_de_produto_bg from "@/public/design_de_produto_background_1600_900.webp"
+import design_de_produto_bg from "@/public/design_de_produto_1920_1080.png"
 import Image, { StaticImageData } from "next/image"
 
 interface ServicesProps {
