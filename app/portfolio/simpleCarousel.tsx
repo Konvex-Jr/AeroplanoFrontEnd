@@ -58,7 +58,7 @@ export default function SimpleCarousel({
               type="button"
               onClick={goToPrevious}
               aria-label="Imagem anterior"
-              className="absolute left-0 top-1/2 z-10 w-[45%] -translate-x-[30%] -translate-y-1/2 cursor-pointer overflow-hidden rounded-xl bg-white opacity-60 shadow-lg transition-all duration-500"
+              className="absolute left-0 top-1/2 z-10 w-[85%] -translate-x-[30%] -translate-y-1/2 cursor-pointer overflow-hidden rounded-xl bg-white opacity-60 shadow-lg transition-all duration-500"
             >
               <div
                 key={`prev-${prevIndex}`}
@@ -69,7 +69,7 @@ export default function SimpleCarousel({
                   src={images[prevIndex]}
                   alt=""
                   fill
-                  sizes="35vw"
+                  sizes="70vw"
                   className={imgClass}
                   style={imgStyle}
                 />
@@ -83,7 +83,7 @@ export default function SimpleCarousel({
               type="button"
               onClick={goToNext}
               aria-label="Próxima imagem"
-              className="absolute right-0 top-1/2 z-10 w-[45%] -translate-y-1/2 translate-x-[30%] cursor-pointer overflow-hidden rounded-xl bg-white opacity-60 shadow-lg transition-all duration-500"
+              className="absolute right-0 top-1/2 z-10 w-[85%] -translate-y-1/2 translate-x-[30%] cursor-pointer overflow-hidden rounded-xl bg-white opacity-60 shadow-lg transition-all duration-500"
             >
               <div
                 key={`next-${nextIndex}`}
@@ -94,7 +94,7 @@ export default function SimpleCarousel({
                   src={images[nextIndex]}
                   alt=""
                   fill
-                  sizes="35vw"
+                  sizes="70vw"
                   className={imgClass}
                   style={imgStyle}
                 />
