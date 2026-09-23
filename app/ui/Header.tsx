@@ -22,7 +22,7 @@ export default function Header() {
       />
 
       <Link href={`https://wa.me/5547999626217`} >
-        <div className="absolute right-[4cqw] bottom-[4cqw] w-[6cqw] lg:w-[4cqw] h-[6cqw] lg:h-[4cqw] flex items-center justify-center bg-green-600 hover:bg-green-700 rounded-[50%]" >
+        <div className="absolute right-[4cqw] bottom-[4cqw] w-[6cqw] lg:w-[4cqw] h-[6cqw] lg:h-[4cqw] flex items-center justify-center bg-green-600 hover:scale-110 transition-all duration-250 rounded-[50%]" >
           <FaWhatsapp className="relative w-[65%] h-[65%]" />
         </div>
       </Link>

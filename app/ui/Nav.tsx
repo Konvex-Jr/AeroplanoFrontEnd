@@ -108,7 +108,7 @@ export default function Nav({ className }: NavProps){
                 {/* Navigation Desktop */}
                 <div className={`${ width < MAX_WIDTH ? `hidden` : 'flex relative gap-8 z-20 md:pr-8' }`}>
                     { navigation.map((elem, index) => {
-                        return <Link key={index} className="text-white text-[1.4cqw] cursor-pointer hover:text-link-hover transition duration-200" href={elem.href} >{elem.text}</Link>
+                        return <Link key={index} className="text-white text-[1.4cqw] cursor-pointer hover:scale-110 transition-all duration-200" href={elem.href} >{elem.text}</Link>
                     }) }
                 </div>
             </div>
