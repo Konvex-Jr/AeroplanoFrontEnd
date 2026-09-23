@@ -1,3 +1,4 @@
+import Image from "next/image";
 import BotaoSaibaMais from "./BotaoSaibaMais";
 
 // TeamCard.tsx
@@ -36,12 +37,14 @@ function TeamCard({ member }: { member: TeamMember }) {
   return (
       <div className="flex flex-col items-center justify-start w-full lg:w-[40%] gap-4 sm:gap-5">
         <div className="flex items-center lg:justify-center w-full lg:w-[40%] gap-4 sm:gap-5" >
-          <div className="h-30 w-30 shrink-0 overflow-hidden rounded-full bg-slate-200 sm:h-56 sm:w-56 md:h-64 md:w-64">
+          <div className="relative h-30 w-30 shrink-0 overflow-hidden rounded-full bg-slate-200 sm:h-56 sm:w-56 md:h-64 md:w-64">
             {member.photo ? (
-              <img
+              <Image
                 src={member.photo}
                 alt={member.name}
-                className="h-full w-full object-cover grayscale"
+                fill
+                sizes="(max-width: 768px) 120px, 256px"
+                className="object-cover grayscale"
               />
             ) : (
               <div className="flex h-full w-full items-center justify-center text-xs text-slate-400">

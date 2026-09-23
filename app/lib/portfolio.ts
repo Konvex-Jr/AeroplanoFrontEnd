@@ -15,6 +15,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "/portfolio/ABG Color System/ABG Color System_imagem 1.png",
       "/portfolio/ABG Color System/ABG Color System_texto.png",
     ],
+    fit: "contain"
   },
 
   {

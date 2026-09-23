@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react";
+import Image from "next/image";
 import { Post } from "../lib/posts";
 import View from "./View";
 
@@ -24,9 +25,24 @@ export default function Blog({ posts }: BlogProps){
                     const { id, image, title } = post
 
                     return (
-                        <div className="flex flex-col items-stretch w-fit h-full rounded-lg hover:shadow hover:scale-101 transition-all duration-150 cursor-pointer" key={id} id={id} onClick={() => openModal(post) } >  
-                            <img className="rounded-t-lg object-cover" src={image} alt="Imagem do Post" />
-                            <h1 className="flex-1 bg-white w-full p-2 text-center rounded-b-lg text-xs lg:text-lg" >{title}</h1>
+                        <div
+                        className="flex flex-col items-stretch w-full h-full rounded-lg hover:shadow hover:scale-101 transition-all duration-150 cursor-pointer"
+                        key={id}
+                        id={id}
+                        onClick={() => openModal(post)}
+                        >
+                        <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-lg">
+                            <Image
+                                src={image}
+                                alt="Imagem do Post"
+                                fill
+                                sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                                className="object-cover"
+                            />
+                        </div>
+                        <h1 className="flex-1 bg-white w-full p-2 text-center rounded-b-lg text-xs lg:text-lg">
+                            {title}
+                        </h1>
                         </div>
                     )
                 }) }
