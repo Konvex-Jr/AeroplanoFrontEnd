@@ -32,10 +32,11 @@ export const portfolioProjects: PortfolioProject[] = [
 
   {
     id: 3,
-    thumbnail: "/portfolio/B Blend/B Blend_imagem 1.png",
+    thumbnail: "/portfolio/B Blend/B_Blend_imagem 1.png",
     images: [
-      "/portfolio/B Blend/B Blend_imagem 2.png",
-      "/portfolio/B Blend/ChatGPT Image 9 de set. de 2026, 22_10_54.png",
+      "/portfolio/B Blend/B_Blend_imagem 2.png",
+      "/portfolio/B Blend/B_Blend_texto.png",
+      "/portfolio/B Blend/abg_color_system_22_10_54.png",
     ],
     imagePosition: "30% center",
   },
