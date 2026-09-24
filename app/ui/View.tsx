@@ -1,43 +1,40 @@
-import { MouseEventHandler } from "react"
 import { CgClose } from "react-icons/cg";
+import Modal from "./Modal";
+import { Post } from "../lib/posts";
 
 interface ViewProps {
-    post:    { id: string, title: string, content: string }
-    onClose: MouseEventHandler
+    post:    Post
+    onClose: () => void
 }
 
 export default function View({ onClose, post }: ViewProps){
 
-    if(!post) return
-        
-    const { id, title, content } = post
+    const { id, title, description, image } = post
 
     return (
-        // Overlay
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4" onClick={onClose}>
+        <Modal onClose={onClose} label={title} >
+            <div id={id} >
 
-            {/* View */}
-            <div id={id} className="relative top-0 w-full max-w-4xl h-[80%] overflow-hidden rounded-lg bg-white shadow-xl" onClick={(e) => e.stopPropagation() } >
+                { image && <img className="w-full max-h-[40vh] object-cover" src={image} alt={`Capa do post ${title}`} /> }
 
-                <div className="p-6">
-                    <div className="flex items-center justify-between border-b pb-4">
-                        <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
-                        <button 
+                <div className="p-6" >
+                    <div className="flex items-start justify-between gap-4 border-b pb-4" >
+                        <h2 className="text-2xl font-bold text-gray-900 break-words" >{title}</h2>
+                        <button
+                        type="button"
                         onClick={onClose}
-                        className="text-gray-500 hover:text-gray-800 transition-colors cursor-pointer"
+                        aria-label="Fechar"
+                        className="shrink-0 text-gray-500 hover:text-gray-800 transition-colors cursor-pointer"
                         >
                             <CgClose className="h-6 w-6 lg:h-8 lg:w-8" />
                         </button>
                     </div>
-                    
-                    <div className="mt-4 max-h-[60vh] overflow-y-auto">
-                        <p className="text-gray-700 whitespace-pre-wrap">{content}</p>
-                    </div>
+
+                    <p className="mt-4 text-gray-700 whitespace-pre-wrap break-words" >{description}</p>
                 </div>
 
             </div>
-
-        </div>
+        </Modal>
     )
 
 }
