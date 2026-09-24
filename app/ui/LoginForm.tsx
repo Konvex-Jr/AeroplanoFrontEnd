@@ -1,13 +1,15 @@
 "use client"
 
 import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 import { getUserPayload } from "../api/auth";
 
 interface LoginFormProps {
-    onSuccess: () => void
+    onSuccess?: () => void
 }
 
 export default function LoginForm({ onSuccess }: LoginFormProps) {
+    const router = useRouter()
     const [submitting, setSubmitting] = useState(false)
     const [error, setError] = useState<string | null>(null)
 
@@ -34,7 +36,13 @@ export default function LoginForm({ onSuccess }: LoginFormProps) {
 
             if (res.ok) {
                 if (getUserPayload()) {
-                    onSuccess()
+                    if (onSuccess) {
+                        onSuccess()
+                    } else {
+                        // Sem callback (página /login): leva para a área administrativa.
+                        // replace para o "voltar" não cair de novo no login.
+                        router.replace("/blog")
+                    }
                     return
                 }
 
