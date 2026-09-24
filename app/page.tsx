@@ -4,7 +4,7 @@ import Equipe from "./ui/equipe/TeamCard";
 import Footer from "./ui/Footer";
 import Header from "./ui/Header";
 import Nav from "./ui/Nav";
-import clientesImg from "@/public/Clientes.png";
+import clientesImg from "@/public/clientes.png";
 
 export default function Home() {
     return (

@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 
-import fundo_header_mobile from "@/public/tela_inicial_fundo_2026_v2_recortada.webp"
-import fundo_header_desktop from "@/public/tela_inicial_fundo_2026_v2_rerecortada.webp"
+import fundo_header_mobile from "@/public/tela_inicial_fundo_2026_v2_mobile.webp"
+import fundo_header_desktop from "@/public/tela_inicial_fundo_2026_v2_desktop.webp"
 
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
