@@ -38,8 +38,9 @@ export default function RootLayout({ children }: LayoutProps<"/"> ) {
     <html
       lang="pt-br"
       className={`h-full antialiased scroll-smooth`}
+      suppressHydrationWarning
     >
-      <body className={`${NeoSansPro.className} min-h-full flex flex-col`}>{children}</body>
+      <body className={`${NeoSansPro.className} min-h-full flex flex-col`} suppressHydrationWarning>{children}</body>
     </html>
   );
 }

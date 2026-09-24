@@ -1,78 +1,120 @@
 "use client"
 
-import { SubmitEvent } from "react";
-import { getUserPayload, getAccessToken } from "../api/auth";
-import { useRouter } from "next/navigation";
+import { FormEvent, useState } from "react";
+import { getUserPayload } from "../api/auth";
 
-export default function LoginForm(){
+interface LoginFormProps {
+    onSuccess: () => void
+}
 
-    const router = useRouter()
+export default function LoginForm({ onSuccess }: LoginFormProps) {
+    const [submitting, setSubmitting] = useState(false)
+    const [error, setError] = useState<string | null>(null)
 
-    async function onSubmit(event: SubmitEvent<HTMLElement>){
-
+    async function onSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
-        
-        const form = new FormData(event.target)
-        
-        const email    = form.get('email') as string
-        const password = form.get('password') as string      
 
-        // Enviar Requisição para Handler da API
-        const res: Response = await fetch("api/login", {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            credentials: 'include',
-            body: JSON.stringify({ email, password })
-        })
+        setError(null)
 
-        const userPayload = getUserPayload()
+        const form = new FormData(event.currentTarget)
+        const email = form.get("email") as string
+        const password = form.get("password") as string
 
-        if(res.status == 200 && userPayload){
-            
-            // [ ] Utilizar um Toast
-            alert("Usuário Logado com Sucesso!")
-            
-            router.replace('/blog')
-            
-            return
-        } 
+        setSubmitting(true)
 
-        if(res.status == 401){
+        try {
+            const res: Response = await fetch("/api/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                credentials: "include",
+                body: JSON.stringify({ email, password })
+            })
 
-            // [ ] Utilizar um Toast
-            alert("Usuário e/ou Senha Incorretos!")
-            return
+            if (res.ok) {
+                if (getUserPayload()) {
+                    onSuccess()
+                    return
+                }
+
+                setError("Ops! Algo deu errado!")
+                return
+            }
+
+            if (res.status === 401) {
+                setError("Usuário e/ou senha incorretos!")
+                return
+            }
+
+            const data = await res.json().catch(() => null)
+            setError(data?.message ?? "Ops! Algo deu errado!")
+        } catch (error) {
+            console.log(error)
+            setError("Ops! Algo deu errado!")
+        } finally {
+            setSubmitting(false)
         }
-
-        // [ ] Utilizar um Toast
-        alert("Ops! Algo deu Errado!")
-        return
     }
 
     return (
-        <div className="flex w-[80%] lg:w-[50%] h-[50%] border-2 rounded-2xl py-8" >
-            <form className="flex flex-col items-center justify-center w-full gap-8 text-[3cqw] md:text-lg mb-10" onSubmit={(e) => { onSubmit(e) }} >
+        <div className="w-full max-w-md rounded-3xl border border-white/20 bg-gradient-to-br from-[#5b7db1] via-[#6f93bd] to-[#7fb5b5] px-8 py-10 shadow-[0_25px_60px_-15px_rgba(40,70,120,0.55)]">
+            <form
+                className="flex flex-col gap-6 text-white text-[3cqw] md:text-lg"
+                onSubmit={onSubmit}
+            >
+                <div className="flex flex-col gap-2 w-full">
+                    <label
+                        className="font-light uppercase tracking-wider text-white/95"
+                        htmlFor="email"
+                    >
+                        Email
+                    </label>
 
-                <div className="flex flex-col gap-1 px-6 w-full lg:w-[80%]">
-                    <label className="text-start" htmlFor="email">Email</label>
-                    <input className="bg-white border-0 p-2 text-black font-normal outline-0 w-full" type="email" name="email" id="email" required />
+                    <input
+                        className="w-full rounded-xl border border-white/30 bg-[#2c4a7c]/40 px-4 py-2.5 text-white outline-none transition-all placeholder:text-white/50 focus:border-white/80 focus:bg-[#2c4a7c]/60 focus:ring-2 focus:ring-white/25"
+                        type="email"
+                        name="email"
+                        id="email"
+                        required
+                        autoFocus
+                    />
                 </div>
 
-                <div className="flex flex-col items-start gap-1 px-6 w-full lg:w-[80%]">
-                    <label htmlFor="name">Senha</label>
-                    <input className="bg-white border-0 p-2 text-black font-normal outline-0 w-full" type="password" name="password" id="password" required />
+                <div className="flex flex-col gap-2 w-full">
+                    <label
+                        className="font-light uppercase tracking-wider text-white/95"
+                        htmlFor="password"
+                    >
+                        Senha
+                    </label>
+
+                    <input
+                        className="w-full rounded-xl border border-white/30 bg-[#2c4a7c]/40 px-4 py-2.5 text-white outline-none transition-all placeholder:text-white/50 focus:border-white/80 focus:bg-[#2c4a7c]/60 focus:ring-2 focus:ring-white/25"
+                        type="password"
+                        name="password"
+                        id="password"
+                        required
+                    />
                 </div>
 
-                <button className="flex justify-center border-2 border-white hover:bg-gray-400 w-[20%] px-2 py-1 cursor-pointer" type="submit" >Login</button>
+                {error && (
+                    <p
+                        className="rounded-lg border border-red-200/40 bg-red-500/30 px-3 py-2 text-center text-sm text-white md:text-base"
+                        role="alert"
+                    >
+                        {error}
+                    </p>
+                )}
 
+                <button
+                    className="w-full rounded-xl bg-white px-6 py-2.5 font-medium uppercase tracking-wider text-[#2c4a7c] shadow-lg shadow-[#2c4a7c]/30 transition-all hover:bg-white/90 hover:shadow-xl active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50"
+                    type="submit"
+                    disabled={submitting}
+                >
+                    {submitting ? "Entrando..." : "Login"}
+                </button>
             </form>
         </div>
     )
-
 }
-
-// Fluxo de Submit do Formulário
-
-// 1. Envia para HANDLER do Componente
-// 2. Envia para HANDLER da API
-// 3. Envia a REQUISIÇÃO

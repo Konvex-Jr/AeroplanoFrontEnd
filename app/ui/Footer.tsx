@@ -11,6 +11,7 @@ import { useWindowWidth } from "../lib/hooks/useWindowWidth"
 import Form from "./Form"
 import Link from "next/link"
 import { FaWhatsapp } from "react-icons/fa"
+import AdminLock from "./AdminLock"
 
 interface FooterProps {
     className?: string,
@@ -26,7 +27,9 @@ export default function Footer({ className, id }: FooterProps){
     const iconSize = width < 800 ? 20 : 30
     
     return (
-        <div id={id} className={`${className} bg-background-footer text-white relative bottom-0 w-full flex flex-col md:flex-row items-start md:items-stretch justify-center px-8 gap-3 lg:gap-32 py-10`}>
+        <div id={id} className={`${className ?? ""} bg-background-footer text-white relative bottom-0 w-full`}>
+
+          <div className="w-full flex flex-col md:flex-row items-start md:items-stretch justify-center px-8 gap-3 lg:gap-32 pt-10 pb-4">
             
             {/* Contacts */}
             <div className="flex flex-col gap-6 text-center w-full md:py-8 px-4 lg:ml-20" >
@@ -76,6 +79,13 @@ export default function Footer({ className, id }: FooterProps){
             <div className="w-full p-4 font-bold" >
                 <Form />                
             </div>
+          </div>
+
+          {/* Cadeado escondido: acesso à área administrativa */}
+          <div className="flex justify-end px-6 pb-3" >
+              <AdminLock />
+          </div>
+
         </div>
     )
 }
