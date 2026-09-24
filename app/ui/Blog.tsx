@@ -83,8 +83,8 @@ export default function Blog({ posts, isAdmin }: BlogProps){
         return (
             <>
                 { NewPostButton }
-                <div className="flex items-center justify-center px-6 my-6" >
-                    <p className="text-gray-500 text-center" >Nenhum post encontrado no momento.</p>
+                <div className="flex items-center justify-center px-6 my-16" >
+                    <p className="text-gray-500 text-center text-[3cqw] md:text-lg" >Nenhum post encontrado no momento.</p>
                 </div>
                 { Editor }
             </>

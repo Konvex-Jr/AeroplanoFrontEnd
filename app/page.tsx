@@ -16,7 +16,7 @@ export default function Home() {
             <div className="w-full h-[1cqw] bg-white" ></div>
                 
             {/* Sobre */}
-            <section className="destaque scroll-pt-24 text-lg md:text-xl lg:text-3xl" id={"sobre"}>
+            <section className="destaque text-lg md:text-xl lg:text-3xl" id={"sobre"}>
                 <div className="mx-auto grid max-w-8xl grid-cols-1 gap-x-60 gap-y-10 text-center md:grid-cols-2 md:gap-y-8 md:text-left">
                     <article className="flex flex-col items-center justify-between md:items-start">
                         <h2>

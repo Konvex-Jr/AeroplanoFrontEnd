@@ -6,17 +6,9 @@ import CarouselDots from "@/app/ui/carousel/CarouselDots";
 
 interface SimpleCarouselProps {
   images: string[];
-  imagePosition?: string;
-  imagemZoom?: number;
-  fit?: "cover" | "contain";
 }
 
-export default function SimpleCarousel({
-  images,
-  imagePosition = "center",
-  imagemZoom = 1,
-  fit = "cover",
-}: SimpleCarouselProps) {
+export default function SimpleCarousel({ images }: SimpleCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const total = images.length;
 
@@ -35,11 +27,8 @@ export default function SimpleCarousel({
   const prevIndex = (currentIndex - 1 + total) % total;
   const nextIndex = (currentIndex + 1) % total;
 
-  const imgClass = fit === "contain" ? "object-contain" : "object-cover";
-  const imgStyle = {
-    objectPosition: imagePosition,
-    transform: `scale(${imagemZoom})`,
-  };
+  // No modal a imagem aparece inteira (sem zoom/recorte); os cards usam a mesma proporção das imagens (16:9)
+  const imgClass = "object-contain";
 
   return (
     <div className="w-full">
@@ -50,8 +39,8 @@ export default function SimpleCarousel({
         }
       `}</style>
 
-      <div className="relative mx-auto w-full max-w-3xl px-[8%] py-4 sm:px-[10%]">
-        <div className="relative aspect-[3/2] w-full">
+      <div className="relative mx-auto w-full px-[8%] py-4 sm:px-[10%]">
+        <div className="relative aspect-video w-full">
           {/* card anterior — menor, atrás, parcialmente coberto à esquerda */}
           {total > 1 && (
             <button
@@ -62,16 +51,15 @@ export default function SimpleCarousel({
             >
               <div
                 key={`prev-${prevIndex}`}
-                className="relative aspect-[3/2] w-full"
+                className="relative aspect-video w-full"
                 style={{ animation: "carousel-fade-in 0.4s ease" }}
               >
                 <Image
                   src={images[prevIndex]}
                   alt=""
                   fill
-                  sizes="70vw"
+                  sizes="60vw"
                   className={imgClass}
-                  style={imgStyle}
                 />
               </div>
             </button>
@@ -87,16 +75,15 @@ export default function SimpleCarousel({
             >
               <div
                 key={`next-${nextIndex}`}
-                className="relative aspect-[3/2] w-full"
+                className="relative aspect-video w-full"
                 style={{ animation: "carousel-fade-in 0.4s ease" }}
               >
                 <Image
                   src={images[nextIndex]}
                   alt=""
                   fill
-                  sizes="70vw"
+                  sizes="60vw"
                   className={imgClass}
-                  style={imgStyle}
                 />
               </div>
             </button>
@@ -112,10 +99,9 @@ export default function SimpleCarousel({
               src={images[currentIndex]}
               alt=""
               fill
-              sizes="(max-width: 768px) 85vw, 700px"
+              sizes="(max-width: 768px) 85vw, 1000px"
               priority
               className={imgClass}
-              style={imgStyle}
             />
           </div>
         </div>

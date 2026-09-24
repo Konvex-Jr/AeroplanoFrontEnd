@@ -22,8 +22,9 @@ body {
   color: var(--foreground);
 }
 
+/* clip (e não hidden) para não transformar o body em container de scroll, o que anula o scroll-smooth do html */
 html, body {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .destaque {

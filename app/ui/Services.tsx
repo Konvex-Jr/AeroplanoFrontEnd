@@ -76,12 +76,12 @@ function ServiceCard({ title, info, list, background }: ServiceCardProp) {
       <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background-footer to-transparent md:bg-linear-to-r" />
 
       <div className="relative z-10 flex flex-col p-8 gap-4 text-white md:absolute md:inset-0 md:justify-top md:items-start md:text-left">
-        <h1 className="text-[4cqw] md:text-xl lg:text-3xl">{title}</h1>
-        <p className="text-[3cqw] md:text-lg lg:text-xl max-w-[120ch] md:max-w-sm">{info}</p>
+        <h1 className="text-[4cqw] md:text-xl lg:text-4xl">{title}</h1>
+        <p className="text-[3cqw] md:text-lg lg:text-2xl max-w-[120ch] md:max-w-sm">{info}</p>
 
         <div className="flex flex-col md:items-start">
           {list.map((item, index) => (
-            <span key={index} className="text-[3cqw] md:text-lg lg:text-xl">
+            <span key={index} className="text-[3cqw] md:text-lg lg:text-2xl">
               {item}
             </span>
           ))}

@@ -58,7 +58,7 @@ export default function LoginForm({ onSuccess }: LoginFormProps) {
     }
 
     return (
-        <div className="w-full max-w-md rounded-3xl border border-white/20 bg-gradient-to-br from-[#5b7db1] via-[#6f93bd] to-[#7fb5b5] px-8 py-10 shadow-[0_25px_60px_-15px_rgba(40,70,120,0.55)]">
+        <div className="w-full max-w-md rounded-3xl border border-white/20 bg-linear-to-br from-[#5b7db1] via-[#6f93bd] to-[#7fb5b5] px-8 py-10 shadow-[0_25px_60px_-15px_rgba(40,70,120,0.55)]">
             <form
                 className="flex flex-col gap-6 text-white text-[3cqw] md:text-lg"
                 onSubmit={onSubmit}

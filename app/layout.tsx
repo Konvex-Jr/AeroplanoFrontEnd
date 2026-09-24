@@ -29,7 +29,7 @@ const NeoSansPro = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "Aeroplano",
+  title: "Aeroplano Design",
   description: "Aeroplano Design - Joinville",
 };
 
