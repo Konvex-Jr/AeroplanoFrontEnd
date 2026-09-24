@@ -23,9 +23,7 @@ export default function Form(){
 
         const data = JSON.stringify(await res.json())
 
-        console.log(data);
-
-        if(res.ok) alert("Email enviado com sucesso.") // Só por enquanto!
+        if(res.ok) console.log(data) // Só por enquanto!
     }
 
     return (

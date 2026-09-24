@@ -15,7 +15,7 @@ export default function Page() {
       <Nav className="relative" />
 
       <section className="w-full bg-[#e6eef9] px-4 py-14 sm:py-20">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 md:gap-10">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:max-w-352 lg:gap-8 lg:px-8">
           {portfolioProjects.map((project) => (
             <PortfolioCard
               key={project.id}

@@ -101,7 +101,7 @@ export default function Nav({ className }: NavProps){
                 <div className="absolute inset-0 w-full h-full -z-10 bg-linear-to-r from-nav-gradient-start to-nav-gradient-end overflow-hidden" ></div>
             
                 <Link href="/" className="z-20">
-                <img className="h-[6cqw] lg:h-16 pl-1 lg:pl-7 lg" src={logo_aeroplano.src} alt="Logo Aeroplano" />
+                    <img className="h-[6cqw] lg:h-16 pl-1 lg:pl-7 lg" src={logo_aeroplano.src} alt="Logo Aeroplano" />
                 </Link>
                 
                 {/* Sandwich to Open Sidebar */}

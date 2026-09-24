@@ -22,7 +22,7 @@ export default function PortfolioModal({ project, onClose }: PortfolioModalProps
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl"
+        className="relative w-full max-w-[min(80rem,150vh)]"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -46,12 +46,7 @@ export default function PortfolioModal({ project, onClose }: PortfolioModalProps
           </svg>
         </button>
 
-        <SimpleCarousel
-          images={project.images}
-          imagePosition={project.imagePosition}
-          imagemZoom={project.imagemZoom}
-          fit={project.fit}
-        />
+        <SimpleCarousel images={project.images} />
       </div>
     </div>
   );

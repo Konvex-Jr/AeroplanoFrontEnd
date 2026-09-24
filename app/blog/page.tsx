@@ -14,11 +14,14 @@ export default async function Page(){
     const posts = await getPosts()
 
     return (
-        <div>
+        // flex-1 + main flex-1: ocupa a altura toda do body e empurra o footer para o fim da página
+        <div className="flex flex-col flex-1">
 
             <Nav className="relative" />
 
-            <Blog posts={posts} isAdmin={isAdmin} />
+            <main className="flex-1">
+                <Blog posts={posts} isAdmin={isAdmin} />
+            </main>
 
             <Footer id="#footer" />
         </div>
