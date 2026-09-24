@@ -3,8 +3,11 @@ export interface Project {
   image: string | null;
   backImage: string | null;
   imagePosition?: string;
-  imagemZoom?: number; 
-  fit?: "cover" | "contain"; 
+  imagemZoom?: number;
+  fit?: "cover" | "contain";
+  backFit?: "cover" | "contain";
+  backPosition?: string;
+  backZoom?: number;
 }
 
 export const projects: Project[] = [
@@ -23,6 +26,8 @@ export const projects: Project[] = [
     imagePosition: "center",
     imagemZoom: 1,
     fit: "cover",
+    backFit: "contain",
+    backZoom: 1.15,
   },
   {
     id: 3,

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FaPen, FaTrash } from "react-icons/fa";
+import Image from "next/image";
 import { Post } from "../lib/posts";
 import View from "./View";
 import PostForm from "./PostForm";

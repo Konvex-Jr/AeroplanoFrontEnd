@@ -100,7 +100,9 @@ export default function Nav({ className }: NavProps){
                 {/* Imagem de Fundo */}
                 <div className="absolute inset-0 w-full h-full -z-10 bg-linear-to-r from-nav-gradient-start to-nav-gradient-end overflow-hidden" ></div>
             
-                <img className="h-[6cqw] lg:h-16 z-20 pl-1 lg:pl-7 lg" src={logo_aeroplano.src} alt="Logo Aeroplano" />
+                <Link href="/" className="z-20">
+                <img className="h-[6cqw] lg:h-16 pl-1 lg:pl-7 lg" src={logo_aeroplano.src} alt="Logo Aeroplano" />
+                </Link>
                 
                 {/* Sandwich to Open Sidebar */}
                 { width < MAX_WIDTH && <img className="pr-2 cursor-pointer z-20" src={sandwich_icon.src} alt="Ícone de Sanduíche" onClick={() => openSidebar() } /> }

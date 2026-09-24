@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react";
+import Image from "next/image";
 import CarouselDots from "@/app/ui/carousel/CarouselDots";
 
 interface SimpleCarouselProps {
@@ -34,7 +35,7 @@ export default function SimpleCarousel({
   const prevIndex = (currentIndex - 1 + total) % total;
   const nextIndex = (currentIndex + 1) % total;
 
-  const imgClass = `h-full w-full ${fit === "contain" ? "object-contain" : "object-cover"}`;
+  const imgClass = fit === "contain" ? "object-contain" : "object-cover";
   const imgStyle = {
     objectPosition: imagePosition,
     transform: `scale(${imagemZoom})`,
@@ -59,8 +60,19 @@ export default function SimpleCarousel({
               aria-label="Imagem anterior"
               className="absolute left-0 top-1/2 z-10 w-[85%] -translate-x-[30%] -translate-y-1/2 cursor-pointer overflow-hidden rounded-xl bg-white opacity-60 shadow-lg transition-all duration-500"
             >
-              <div key={`prev-${prevIndex}`} className="aspect-[3/2] w-full" style={{ animation: "carousel-fade-in 0.4s ease" }}>
-                <img src={images[prevIndex]} alt="" className={imgClass} style={imgStyle} />
+              <div
+                key={`prev-${prevIndex}`}
+                className="relative aspect-[3/2] w-full"
+                style={{ animation: "carousel-fade-in 0.4s ease" }}
+              >
+                <Image
+                  src={images[prevIndex]}
+                  alt=""
+                  fill
+                  sizes="70vw"
+                  className={imgClass}
+                  style={imgStyle}
+                />
               </div>
             </button>
           )}
@@ -73,8 +85,19 @@ export default function SimpleCarousel({
               aria-label="Próxima imagem"
               className="absolute right-0 top-1/2 z-10 w-[85%] -translate-y-1/2 translate-x-[30%] cursor-pointer overflow-hidden rounded-xl bg-white opacity-60 shadow-lg transition-all duration-500"
             >
-              <div key={`next-${nextIndex}`} className="aspect-[3/2] w-full" style={{ animation: "carousel-fade-in 0.4s ease" }}>
-                <img src={images[nextIndex]} alt="" className={imgClass} style={imgStyle} />
+              <div
+                key={`next-${nextIndex}`}
+                className="relative aspect-[3/2] w-full"
+                style={{ animation: "carousel-fade-in 0.4s ease" }}
+              >
+                <Image
+                  src={images[nextIndex]}
+                  alt=""
+                  fill
+                  sizes="70vw"
+                  className={imgClass}
+                  style={imgStyle}
+                />
               </div>
             </button>
           )}
@@ -85,7 +108,15 @@ export default function SimpleCarousel({
             className="absolute inset-0 z-20 overflow-hidden rounded-2xl bg-white shadow-2xl"
             style={{ animation: "carousel-fade-in 0.4s ease" }}
           >
-            <img src={images[currentIndex]} alt="" className={imgClass} style={imgStyle} />
+            <Image
+              src={images[currentIndex]}
+              alt=""
+              fill
+              sizes="(max-width: 768px) 85vw, 700px"
+              priority
+              className={imgClass}
+              style={imgStyle}
+            />
           </div>
         </div>
       </div>

@@ -52,7 +52,7 @@ export default function Carousel() {
           style={{ overflowX: "scroll", scrollbarWidth: "none" } as React.CSSProperties}
         >
           {/* Espaçador inicial — acompanha a largura do card em cada breakpoint pra permitir centralizar as pontas */}
-          <div className="w-[20%] md:w-[27.5%] shrink-0" />
+          <div className="w-[10%] md:w-[15%] lg:w-[27.5%] shrink-0" />
 
           {projects.map((project, index) => {
             const isActive = index === currentIndex;
@@ -60,7 +60,7 @@ export default function Carousel() {
               <div
                 key={project.id ?? index}
                 /* Card com 60% de largura no mobile e 45% a partir de telas md */
-                className="w-[60%] md:w-[45%] shrink-0"
+                className="w-[80%] md:w-[70%] lg:w-[45%] shrink-0"
               >
                 <div
                   onClick={() => {
@@ -85,7 +85,7 @@ export default function Carousel() {
           })}
 
           {/* Espaçador final */}
-          <div className="w-[20%] md:w-[27.5%] shrink-0" />
+          <div className="w-[10%] md:w-[15%] lg:w-[27.5%] shrink-0" />
         </div>
       </div>
 

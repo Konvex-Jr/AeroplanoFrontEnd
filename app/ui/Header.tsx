@@ -1,7 +1,9 @@
 "use client"
 
-import fundo_header_mobile from "@/public/tela_inicial_fundo_2026_v2_recortada.webp"
-import fundo_header_desktop from "@/public/tela_inicial_fundo_2026_v2_rerecortada.webp"
+import Image from "next/image";
+
+import fundo_header_mobile from "@/public/tela_inicial_fundo_2026_v2_mobile.webp"
+import fundo_header_desktop from "@/public/tela_inicial_fundo_2026_v2_desktop.webp"
 
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
@@ -15,10 +17,12 @@ export default function Header() {
 
     <header className="relative z-10 w-full @container text-white">
       
-      <img 
-        className="w-full h-full object-cover object-top block" 
-        src={width < 1024 ? fundo_header_mobile.src : fundo_header_desktop.src} 
-        alt="Imagem da Tela Inicial" 
+      <Image
+        src={width < 1024 ? fundo_header_mobile : fundo_header_desktop}
+        alt="Imagem da Tela Inicial"
+        priority
+        sizes="100vw"
+        className="w-full h-full object-cover object-top block"
       />
 
       <Link href={`https://wa.me/5547999626217`} >

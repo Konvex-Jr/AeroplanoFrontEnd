@@ -48,9 +48,16 @@ export default function Footer({ className, id }: FooterProps){
                 </div>
                 <div className="flex gap-4" >
                     <Image src={instagram_icon.src} width={0} height={0} style={{ width: iconSize, height: iconSize }} alt="Ícone do Instagram" />
-                    <div className="text-start text-[3cqw] md:text-lg" >
+                <div className="text-start text-[3cqw] md:text-lg">
+                    <Link
+                        href="https://www.instagram.com/aeroplano_design/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                    >
                         <p>aeroplano_design</p>
-                    </div>
+                    </Link>
+                </div>
                 </div>
 
                 {/* texto fica no fluxo normal, sem ser empurrado */}

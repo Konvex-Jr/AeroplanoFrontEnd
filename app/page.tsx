@@ -1,8 +1,10 @@
+import Image from "next/image";
 import Carousel from "./ui/carousel/Carousel";
 import Equipe from "./ui/equipe/TeamCard";
 import Footer from "./ui/Footer";
 import Header from "./ui/Header";
 import Nav from "./ui/Nav";
+import clientesImg from "@/public/clientes.png";
 
 export default function Home() {
     return (
@@ -66,10 +68,11 @@ export default function Home() {
             
             {/* Clientes */}
             <section className="w-full">
-                <img
-                    src="/Clientes.png"
+                <Image
+                    src={clientesImg}
                     alt="Clientes"
                     className="w-full h-auto block"
+                    sizes="100vw"
                 />
             </section>
             
