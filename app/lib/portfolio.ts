@@ -36,7 +36,6 @@ export const portfolioProjects: PortfolioProject[] = [
     images: [
       "/portfolio/B Blend/B_Blend_imagem 2.png",
       "/portfolio/B Blend/B_Blend_texto.png",
-      "/portfolio/B Blend/abg_color_system_22_10_54.png",
     ],
     imagePosition: "30% center",
   },
@@ -64,6 +63,7 @@ export const portfolioProjects: PortfolioProject[] = [
     id: 6,
     thumbnail: "/portfolio/Copos porcelana/Copos porcelana_imagem 1.png",
     images: [
+      "/portfolio/Copos porcelana/Copos porcelana_imagem 1.png",
       "/portfolio/Copos porcelana/Copos porcelana_imagem 2.png",
       "/portfolio/Copos porcelana/Copos porcelana_texto.png",
     ],
