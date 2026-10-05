@@ -9,7 +9,6 @@ import email_icon     from "@/public/icons/email_icon.svg"
 import Form from "./Form"
 import Link from "next/link"
 import { FaWhatsapp } from "react-icons/fa"
-import AdminLock from "./AdminLock"
 
 interface FooterProps {
     className?: string,
@@ -37,7 +36,7 @@ export default function Footer({ className, id }: FooterProps){
                 <div className="flex gap-4" >
                     <Image src={email_icon.src} width={30} height={30} className={iconClass} alt="Ícone de Email" />
                     <div className="text-start text-[3cqw] md:text-lg" >
-                        <p>Contato@aeroplano.com.br</p>
+                        <p>contato@aeroplanodesign.com.br</p>
                     </div>
                 </div>
                 <div className="flex gap-4" >
@@ -54,13 +53,8 @@ export default function Footer({ className, id }: FooterProps){
                 </div>
                 </div>
 
-                {/* texto fica no fluxo normal, sem ser empurrado */}
-                <div className="flex flex-col items-start text-[3cqw] md:text-lg">
+                <div className="mt-auto flex flex-col items-start gap-2">
                     <p>Agende uma conversa</p>
-                </div>
-
-                {/* só o botão desce até o fim da coluna, alinhando com o Enviar */}
-                <div className="mt-auto flex justify-start">
                     <Link 
                         href="https://wa.me/5547999626217"
                         target="_blank" 
@@ -77,12 +71,6 @@ export default function Footer({ className, id }: FooterProps){
                 <Form />                
             </div>
           </div>
-
-          {/* Cadeado escondido: acesso à área administrativa */}
-          <div className="flex justify-end px-6 pb-3" >
-              <AdminLock />
-          </div>
-
         </div>
     )
 }
