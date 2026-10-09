@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { sendEmailBodySchema } from "../schemas";
 import { CreateEmailResponse, Resend } from 'resend';
 import { config } from "dotenv";
+import { resend } from "@/app/lib/resend";
 
 config()
 
@@ -15,32 +16,18 @@ export async function POST(request: NextRequest){
 
     const { name, email, need  } = parsed.data
 
-    // Configurar Subdomínio para konvex.com.br
-
-    // Enviar para Email da Aeroplano: ''
-
-    // Por enquanto deixa desabilitado!
-
-    return NextResponse.json({ message: "Email enviado com sucesso." }, { status: 200 })
-
-    const emailFrom = 'onboarding@resend.dev'
-    const emailToSend = 'email@example.com'
-
-    // Logs da Requisição
-    console.log("Name : ", name);
-    console.log("Email: ", email);
-    console.log("Need : ", need);
-
+    if(!process.env.EMAIL_FROM || !process.env.EMAIL_TO) return
+    
     // Realiza uma REQUISIÇÃO para a API da Resend
-    const resend = new Resend(process.env.RESEND_API_KEY);
-
     const res: CreateEmailResponse = await resend.emails.send({
-        from: emailFrom,
-        to: [ emailToSend ],
-        subject: `Novo Email de ${name}`,
+        from: process.env.EMAIL_FROM,
+        to: [ process.env.EMAIL_TO ],
+        subject: `Novo Contato de ${name}`,
         html: (`
-            <p>Remetente: <strong>${email}</strong></p>
-            <p>Necessidade: <strong>${need}</strong></p>
+            <div>
+                <p>Remetente: <strong>${email}</strong></p>
+                <p>Necessidade: <strong>${need}</strong></p>
+            </div>
         `)
     });
 
