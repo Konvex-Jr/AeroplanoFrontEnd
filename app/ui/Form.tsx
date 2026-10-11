@@ -24,11 +24,17 @@ export default function Form(){
         const data = JSON.stringify(await res.json())
 
         if(res.ok){
+
             console.log(data)
             alert("Email enviado com Sucesso.")
+        
+        } else {
+        
+            console.log("Algo deu Errado. Tente Novamente em Alguns Segundos.")
+            alert("Algo deu Errado. Tente Novamente em Alguns Segundos.")
+        
         }
 
-        console.log("Algo de Errado.")
     }
 
     return (
