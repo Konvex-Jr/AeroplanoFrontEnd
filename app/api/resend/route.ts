@@ -2,13 +2,15 @@ import { NextRequest, NextResponse } from "next/server";
 import { sendEmailBodySchema } from "../schemas";
 import { CreateEmailResponse, Resend } from 'resend';
 import { config } from "dotenv";
-import { resend } from "@/app/lib/resend";
+import { getResend } from "@/app/lib/resend";
 
 config()
 
 // Handler da ResendAPI.
 
 export async function POST(request: NextRequest){
+    
+    const resend = getResend() 
 
     const parsed = sendEmailBodySchema.safeParse(await request.json())
 
@@ -17,6 +19,7 @@ export async function POST(request: NextRequest){
     const { name, email, need  } = parsed.data
 
     if(!process.env.EMAIL_FROM || !process.env.EMAIL_TO) return
+
     
     // Realiza uma REQUISIÇÃO para a API da Resend
     const res: CreateEmailResponse = await resend.emails.send({
