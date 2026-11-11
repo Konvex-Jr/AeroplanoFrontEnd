@@ -8,12 +8,15 @@ import clientesImg from "@/public/clientes.png";
 
 export default function Home() {
     return (
-        <main className="flex flex-col" >
-
+        <>
+            {/* Nav (banner) e Footer (contentinfo) ficam fora do <main>, como manda a semântica de landmarks */}
             <Nav className="absolute" />
+
+            <main id="conteudo" className="flex flex-col" >
+
             <Header />
 
-            <div className="w-full h-[1cqw] bg-white" ></div>
+            <div className="w-full h-[1cqw] bg-white" aria-hidden="true" ></div>
                 
             {/* Sobre */}
             <section className="destaque text-lg md:text-xl lg:text-3xl" id={"sobre"}>
@@ -70,7 +73,7 @@ export default function Home() {
             <section className="w-full">
                 <Image
                     src={clientesImg}
-                    alt="Clientes"
+                    alt="Logotipos de clientes atendidos pela Aeroplano Design"
                     className="w-full h-auto block"
                     sizes="100vw"
                 />
@@ -79,8 +82,10 @@ export default function Home() {
             {/* Equipe */}
             <Equipe/>
             
+            </main>
+
             {/* Footer */}
             <Footer id={"contato"} />
-        </main>
+        </>
     )
 }

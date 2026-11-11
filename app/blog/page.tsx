@@ -19,7 +19,7 @@ export default async function Page(){
 
             <Nav className="relative" />
 
-            <main className="flex-1">
+            <main id="conteudo" className="flex-1">
                 <Blog posts={posts} isAdmin={isAdmin} />
             </main>
 

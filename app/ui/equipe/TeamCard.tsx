@@ -14,7 +14,7 @@ interface TeamMember {
 
 function PhoneIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className={className}>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className={className} aria-hidden="true">
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -26,7 +26,7 @@ function PhoneIcon({ className }: { className?: string }) {
 
 function MailIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className={className}>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className={className} aria-hidden="true">
       <rect x="3" y="5" width="18" height="14" rx="2" strokeLinecap="round" strokeLinejoin="round" />
       <path strokeLinecap="round" strokeLinejoin="round" d="m3 7 9 6 9-6" />
     </svg>
@@ -53,22 +53,22 @@ function TeamCard({ member }: { member: TeamMember }) {
             )}
           </div>
           <div className="flex flex-col gap-2">
-            <h3 className="font-bold uppercase tracking-wide text-slate-800 sm:text-lg">
+            <h2 className="font-bold uppercase tracking-wide text-slate-800 sm:text-lg">
               {member.name}
-            </h3>
+            </h2>
             <p className="text-xs md:text-lg text-slate-600">{member.role}</p>
             <p className="text-xs md:text-lg text-slate-600">{member.specialty}</p>
             <div className="mt-1.5 flex flex-col gap-1">
               <a
                 href={`tel:${member.phone.replace(/\D/g, "")}`}
-                className="flex items-center gap-2 text-xs md:text-lg text-slate-600 hover:text-slate-800"
+                className="flex min-h-6 items-center gap-2 py-0.5 text-xs md:text-lg text-slate-600 hover:text-slate-800"
               >
                 <PhoneIcon className="h-4 w-4 shrink-0 text-text-founders" />
                 {member.phone}
               </a>
               <a
                 href={`mailto:${member.email}`}
-                className="flex items-center gap-2 text-xs md:text-lg text-slate-600 hover:text-slate-800"
+                className="flex min-h-6 items-center gap-2 py-0.5 text-xs md:text-lg text-slate-600 hover:text-slate-800"
               >
                 <MailIcon className="h-4 w-4 shrink-0 text-text-founders" />
                 {member.email}
@@ -109,7 +109,7 @@ const team: TeamMember[] = [
 
 export default function Equipe() {
   return (
-    <section className="w-full bg-white px-4 py-14 lg:block lg:py-20">
+    <section className="w-full bg-white px-4 py-14 lg:block lg:py-20" aria-label="Equipe">
       <div className="flex justify-center w-full flex-col text-text-founders items-center gap-10 xl:flex-row sm:items-center sm:justify-center sm:gap-20">
         {team.map((member) => (
           <TeamCard key={member.email} member={member} />

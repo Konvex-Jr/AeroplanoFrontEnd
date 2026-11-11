@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 
 import map_icon       from "@/public/icons/map_icon.svg"
@@ -20,48 +18,50 @@ export default function Footer({ className, id }: FooterProps){
     const iconClass = "size-5 min-[800px]:size-[30px] shrink-0"
 
     return (
-        <div id={id} className={`${className ?? ""} bg-background-footer text-white relative bottom-0 w-full`}>
+        <footer id={id} className={`${className ?? ""} bg-background-footer text-white relative bottom-0 w-full`}>
 
           <div className="w-full flex flex-col md:flex-row items-start md:items-stretch justify-center px-8 gap-3 lg:gap-32 pt-10 pb-4">
             
             {/* Contacts */}
             <div className="flex flex-col gap-6 text-center w-full md:py-8 px-4 lg:ml-20" >
                 <div className="flex gap-2" >
-                    <Image src={map_icon.src} width={30} height={30} className={iconClass} alt="Ícone de Pino de Mapa" />
+                    <Image src={map_icon.src} width={30} height={30} className={iconClass} alt="" />
                     <div className="text-start text-[3cqw] md:text-lg" >
                         <p>Rua Doutor João Colin, 1285, Sala 3</p>
                         <p>Joinville SC Brasil</p>
                     </div>
                 </div>
                 <div className="flex gap-4" >
-                    <Image src={email_icon.src} width={30} height={30} className={iconClass} alt="Ícone de Email" />
+                    <Image src={email_icon.src} width={30} height={30} className={iconClass} alt="" />
                     <div className="text-start text-[3cqw] md:text-lg" >
                         <p>contato@aeroplanodesign.com.br</p>
                     </div>
                 </div>
                 <div className="flex gap-4" >
-                    <Image src={instagram_icon.src} width={30} height={30} className={iconClass} alt="Ícone do Instagram" />
+                    <Image src={instagram_icon.src} width={30} height={30} className={iconClass} alt="" />
                 <div className="text-start text-[3cqw] md:text-lg">
                     <Link
                         href="https://www.instagram.com/aeroplano_design/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:underline"
+                        className="inline-block py-1 hover:underline"
+                        aria-label="Instagram da Aeroplano Design: aeroplano_design (abre em nova aba)"
                     >
-                        <p>aeroplano_design</p>
+                        aeroplano_design
                     </Link>
                 </div>
                 </div>
 
                 <div className="mt-auto flex flex-col items-start gap-2">
                     <p>Agende uma conversa</p>
-                    <Link 
+                    <Link
                         href="https://wa.me/5547999626217"
-                        target="_blank" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Agendar uma conversa pelo WhatsApp (abre em nova aba)"
+                        className="w-[16cqw] h-[6cqw] min-w-16 min-h-8 lg:w-[8cqw] lg:h-[3cqw] flex items-center justify-center bg-green-600 hover:bg-green-700 rounded-4xl"
                     >
-                        <div className="w-[16cqw] h-[6cqw] lg:w-[8cqw] lg:h-[3cqw] flex items-center justify-center bg-green-600 hover:bg-green-700 rounded-4xl" >
-                            <FaWhatsapp className="relative w-[65%] h-[65%]" />
-                        </div>
+                        <FaWhatsapp aria-hidden="true" className="relative w-[65%] h-[65%]" />
                     </Link>
                 </div>
             </div>
@@ -71,6 +71,6 @@ export default function Footer({ className, id }: FooterProps){
                 <Form />                
             </div>
           </div>
-        </div>
+        </footer>
     )
 }

@@ -42,7 +42,7 @@ export default function Carousel() {
   };
 
   return (
-    <section className="w-full bg-[#DEEBF6] py-14 sm:py-20 md:py-7">
+    <section className="w-full bg-[#DEEBF6] py-14 sm:py-20 md:py-7" aria-label="Projetos em destaque">
       <div className="relative w-full">
         <style>{`.carousel-track::-webkit-scrollbar { display: none; }`}</style>
 
@@ -89,7 +89,7 @@ export default function Carousel() {
         </div>
       </div>
 
-      <p className="mt-4 text-center text-s text-slate-400 sm:mt-6">
+      <p className="mt-4 text-center text-sm text-slate-600 sm:mt-6">
         Clique na imagem para ver os detalhes do projeto
       </p>
 
@@ -98,9 +98,9 @@ export default function Carousel() {
           type="button"
           onClick={goToPrevious}
           aria-label="Projeto anterior"
-          className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 transition-colors hover:text-slate-700"
+          className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full text-slate-600 transition-colors hover:text-slate-800"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-5 w-5 sm:h-6 sm:w-6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
@@ -111,9 +111,9 @@ export default function Carousel() {
           type="button"
           onClick={goToNext}
           aria-label="Próximo projeto"
-          className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 transition-colors hover:text-slate-700"
+          className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full text-slate-600 transition-colors hover:text-slate-800"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-5 w-5 sm:h-6 sm:w-6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
           </svg>
         </button>

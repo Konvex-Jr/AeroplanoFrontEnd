@@ -58,17 +58,20 @@ const services: ServiceCardProp[] = [
     }
 ]
 
-function ServiceCard({ title, info, list, background }: ServiceCardProp) {
+function ServiceCard({ title, info, list, background, priority }: ServiceCardProp & { priority: boolean }) {
   return (
     <div className="relative w-full overflow-hidden bg-jet-black">
       <div className="relative aspect-video w-full">
         <Image
-          loading="eager"
-          src={background.src}
-          alt={`Plano de Fundo ${title}`}
+          // Só a 1ª imagem (acima da dobra) é carregada cedo; as demais ficam lazy.
+          // PNG 1920x1080 em quality=100 pesava ~1MB cada: o otimizador entrega WebP/AVIF no tamanho certo.
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
+          src={background}
+          alt=""
           fill
+          sizes="100vw"
           className="object-cover object-top"
-          quality={100}
         />
       <div className="pointer-events-none absolute -bottom-1 inset-0 bg-linear-to-t from-background-footer to-transparent md:bg-none" />
       </div>
@@ -76,16 +79,16 @@ function ServiceCard({ title, info, list, background }: ServiceCardProp) {
       <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background-footer to-transparent md:bg-linear-to-r" />
 
       <div className="relative z-10 flex flex-col p-8 gap-4 text-white md:absolute md:inset-0 md:justify-top md:items-start md:text-left">
-        <h1 className="text-[4cqw] md:text-xl lg:text-4xl">{title}</h1>
-        <p className="text-[3cqw] md:text-lg lg:text-2xl max-w-[120ch] md:max-w-sm">{info}</p>
+        <h2 className="text-[4cqw] md:text-xl lg:text-4xl">{title}</h2>
+        { info && <p className="text-[3cqw] md:text-lg lg:text-2xl max-w-[120ch] md:max-w-sm">{info}</p> }
 
-        <div className="flex flex-col md:items-start">
-          {list.map((item, index) => (
-            <span key={index} className="text-[3cqw] md:text-lg lg:text-2xl">
+        <ul className="flex flex-col md:items-start">
+          {list.map((item) => (
+            <li key={item} className="text-[3cqw] md:text-lg lg:text-2xl">
               {item}
-            </span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );
@@ -94,9 +97,10 @@ function ServiceCard({ title, info, list, background }: ServiceCardProp) {
 export default function Services({ className }: ServicesProps){
 
     return (
-        <section className={`${className} flex flex-col gap-4 bg-background-footer`} >
+        <section className={`${className ?? ""} flex flex-col gap-4 bg-background-footer`} >
+            <h1 className="sr-only">Serviços</h1>
             { services.map((card, index) => {
-                return <ServiceCard key={index} title={card.title} info={card.info} list={card.list} background={card.background} />
+                return <ServiceCard key={card.title} title={card.title} info={card.info} list={card.list} background={card.background} priority={index === 0} />
             }) }
         </section>
     )

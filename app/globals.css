@@ -76,7 +76,8 @@ html, body {
 }
 
 .como-fazemos h2 {
-  color: #97B8D7;
+  /* era #97B8D7 (contraste 1.97:1 sobre #F6FAFE); #46709A mantém o tom azul com 4.95:1 */
+  color: #46709A;
   font-size: clamp(2rem, 3vw, 3.25rem);
   line-height: 1.1;
 }

@@ -112,7 +112,7 @@ export default function SimpleCarousel({ images }: SimpleCarouselProps) {
           type="button"
           onClick={goToPrevious}
           aria-label="Anterior"
-          className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 transition-colors hover:text-slate-700"
+          className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full text-slate-200 transition-colors hover:text-white"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-5 w-5 sm:h-6 sm:w-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -125,7 +125,7 @@ export default function SimpleCarousel({ images }: SimpleCarouselProps) {
           type="button"
           onClick={goToNext}
           aria-label="Próximo"
-          className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 transition-colors hover:text-slate-700"
+          className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full text-slate-200 transition-colors hover:text-white"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-5 w-5 sm:h-6 sm:w-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />

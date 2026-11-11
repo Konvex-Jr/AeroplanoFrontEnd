@@ -7,9 +7,11 @@ export default function Page(){
             
             <Nav />
 
-            <h1 className="w-full text-center text-2xl lg:text-4xl font-bold pb-8" >Login</h1>
+            <main id="conteudo" className="flex w-full flex-col items-center">
+                <h1 className="w-full text-center text-2xl lg:text-4xl font-bold pb-8" >Login</h1>
 
-            <LoginForm />
+                <LoginForm />
+            </main>
 
         </div>
     )

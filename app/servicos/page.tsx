@@ -4,14 +4,14 @@ import Services from "../ui/Services";
 
 export default function Page(){
     return (
-        <div >
-            
+        <>
             <Nav className="relative" />
 
-            <Services />
+            <main id="conteudo">
+                <Services />
+            </main>
 
             <Footer id={"contato"} />
-            
-        </div>
-    ) 
+        </>
+    )
 }

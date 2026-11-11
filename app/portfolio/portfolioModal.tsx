@@ -19,6 +19,9 @@ export default function PortfolioModal({ project, onClose }: PortfolioModalProps
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Imagens do projeto"
       onClick={onClose}
     >
       <div
@@ -29,7 +32,7 @@ export default function PortfolioModal({ project, onClose }: PortfolioModalProps
           type="button"
           onClick={onClose}
           aria-label="Fechar"
-          className="absolute -top-10 left-1/2 -translate-x-1/2 text-white hover:text-slate-300"
+          className="absolute -top-12 left-1/2 flex size-11 -translate-x-1/2 cursor-pointer items-center justify-center text-white hover:text-slate-300"
         >
           <svg
             viewBox="0 0 24 24"
@@ -37,6 +40,7 @@ export default function PortfolioModal({ project, onClose }: PortfolioModalProps
             stroke="currentColor"
             strokeWidth={2}
             className="h-7 w-7"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"

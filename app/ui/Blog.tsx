@@ -84,7 +84,7 @@ export default function Blog({ posts, isAdmin }: BlogProps){
             <>
                 { NewPostButton }
                 <div className="flex items-center justify-center px-6 my-16" >
-                    <p className="text-gray-500 text-center text-[3cqw] md:text-lg" >Nenhum post encontrado no momento.</p>
+                    <p className="text-gray-700 text-center text-[3cqw] md:text-lg" >Nenhum post encontrado no momento.</p>
                 </div>
                 { Editor }
             </>
@@ -105,7 +105,7 @@ export default function Blog({ posts, isAdmin }: BlogProps){
                         <div className={`relative flex flex-col items-stretch w-full h-full rounded-lg hover:shadow hover:scale-101 transition-all duration-150 cursor-pointer ${deletingId === id ? "opacity-50 pointer-events-none" : ""}`} key={id} id={id} onClick={() => setSelectedPost(post) } >
 
                             { image
-                                ? <img className="w-full aspect-video rounded-t-lg object-cover" src={image} alt={`Capa do post ${title}`} />
+                                ? <img className="w-full aspect-video rounded-t-lg object-cover" src={image} alt={`Capa do post ${title}`} loading="lazy" decoding="async" />
                                 : <div className="w-full aspect-video rounded-t-lg bg-gray-300" />
                             }
 

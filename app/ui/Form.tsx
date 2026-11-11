@@ -1,3 +1,5 @@
+"use client"
+
 import { SubmitEvent } from "react";
 
 export default function Form(){
@@ -42,17 +44,17 @@ export default function Form(){
 
             <div className="flex flex-col items-start gap-1">
                 <label htmlFor="name">Seu nome</label>
-                <input className="bg-white border-0 p-2 text-black font-normal outline-0 w-full lg:w-[80%]" type="text" name="name" id="name" required />
+                <input className="bg-white border-0 p-2 text-black font-normal outline-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white w-full lg:w-[80%]" type="text" name="name" id="name" autoComplete="name" required />
             </div>
 
             <div className="flex flex-col items-start gap-1">
                 <label htmlFor="email">E-mail</label>
-                <input className="bg-white border-0 p-2 text-black font-normal outline-0 w-full lg:w-[80%]" type="email" name="email" id="email" required />
+                <input className="bg-white border-0 p-2 text-black font-normal outline-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white w-full lg:w-[80%]" type="email" name="email" id="email" autoComplete="email" required />
             </div>
 
             <div className="flex flex-col items-start gap-1">
                 <label htmlFor="need">Do que você precisa?</label>
-                <textarea className="bg-white border-0 p-2 text-black font-normal outline-0 w-full lg:w-[80%]" name="need" id="need" required />
+                <textarea className="bg-white border-0 p-2 text-black font-normal outline-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white w-full lg:w-[80%]" name="need" id="need" required />
             </div>
 
             <button className="flex justify-center border-2 border-white hover:bg-gray-600 w-[50%] px-2 cursor-pointer" type="submit" >Enviar</button>

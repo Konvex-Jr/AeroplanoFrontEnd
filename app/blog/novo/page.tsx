@@ -14,7 +14,7 @@ export default async function Page() {
 
             <Nav className="relative" />
 
-            <div className="flex-1 flex flex-col items-center px-6 my-10">
+            <main id="conteudo" className="flex-1 flex flex-col items-center px-6 my-10">
 
                 <h1 className="w-full text-center text-2xl lg:text-4xl font-bold pb-8">Novo Post</h1>
 
@@ -28,7 +28,7 @@ export default async function Page() {
                     )
                 }
 
-            </div>
+            </main>
 
             <Footer id="#footer" />
         </div>
